@@ -123,16 +123,11 @@
     :style="navStyle">
     <ul>
       <li class="nav-item sponsors">
-        <a>{{ lang === 'zh-CN' ? '赞助商' : 'Sponsors' }}</a>
+        <a>{{ lang === 'zh-CN' ? '基于' : 'Base on' }}</a>
         <ul class="pure-menu-list sub-nav">
-          <li class="nav-item" v-show="lang !== 'zh-CN'">
-            <a href="https://tipe.io/?ref=element" target="_blank">
-              <img src="~examples/assets/images/tipe.svg" alt="tipe.io">
-            </a>
-          </li>
           <li class="nav-item">
-            <a class="sponsor" href="https://www.duohui.cn/?utm_source=element&utm_medium=web&utm_campaign=element-index" target="_blank">
-              <img src="~examples/assets/images/duohui.svg" alt="duohui">
+            <a class="sponsor" href="https://element.eleme.cn/#/zh-CN" target="_blank">
+              <img src="~examples/assets/images/element-logo.svg" style="width: 100px">
             </a>
           </li>
         </ul>

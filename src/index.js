@@ -85,6 +85,9 @@ import Popconfirm from '../packages/popconfirm/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
+// custom
+import Module from '../packages/module/index.js';
+
 const components = [
   Pagination,
   Dialog,
@@ -163,7 +166,8 @@ const components = [
   Avatar,
   Drawer,
   Popconfirm,
-  CollapseTransition
+  CollapseTransition,
+  Module
 ];
 
 const install = function(Vue, opts = {}) {
@@ -198,7 +202,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '2.13.2',
+  version: '1.0.0',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -284,5 +288,6 @@ export default {
   CascaderPanel,
   Avatar,
   Drawer,
-  Popconfirm
+  Popconfirm,
+  Module
 };

@@ -2,7 +2,7 @@ export const themeList = [
   {
     name: 'Element',
     author: 'Element',
-    theme: '{"global":{"$--color-primary":"#409EFF"},"local":{}}'
+    theme: '{"global":{"$--color-primary":"#f00"},"local":{}}'
   }
 ];
 

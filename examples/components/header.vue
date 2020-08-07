@@ -273,12 +273,12 @@
           <!-- logo -->
           <slot>
             <img
-              src="../assets/images/element-logo.svg"
-              alt="element-logo"
+              src="../assets/images/gj-logo.svg"
+              alt="gj-logo"
               class="nav-logo">
             <img
-              src="../assets/images/element-logo-small.svg"
-              alt="element-logo"
+              src="../assets/images/gj-logo-small.svg"
+              alt="gj-logo"
               class="nav-logo-small">
           </slot>
 
