@@ -1,24 +1,24 @@
 <template>
   <section class="config" :key="displayName">
     <div class="config-label">
-      <el-tooltip :content="displayName" placement="top">
+      <gj-tooltip :content="displayName" placement="top">
         <span>{{displayKeyName}}</span>
-      </el-tooltip>
+      </gj-tooltip>
     </div>
     <div class="config-content">
-      <el-select 
+      <gj-select 
         v-model="value" 
         class="select"
         size="medium"
         @change="onSelectChange"
       >
-        <el-option
+        <gj-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item.value">
-        </el-option>
-      </el-select>
+        </gj-option>
+      </gj-select>
     </div>
   </section>
 </template>

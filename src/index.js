@@ -175,7 +175,12 @@ const install = function(Vue, opts = {}) {
   locale.i18n(opts.i18n);
 
   components.forEach(component => {
-    Vue.component(component.name, component);
+    let name = component.name;
+    // 统一修改为Gj
+    if (name.indexOf('El') === 0) {
+      name = name.replace('El', 'Gj');
+    }
+    Vue.component(name, component);
   });
 
   Vue.use(InfiniteScroll);

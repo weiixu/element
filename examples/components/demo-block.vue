@@ -26,18 +26,18 @@
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
       </transition>
-      <el-tooltip effect="dark" :content="langConfig['tooltip-text']" placement="right">
+      <gj-tooltip effect="dark" :content="langConfig['tooltip-text']" placement="right">
         <transition name="text-slide">
-          <el-button
+          <gj-button
             v-show="hovering || isExpanded"
             size="small"
             type="text"
             class="control-button"
             @click.stop="goCodepen">
             {{ langConfig['button-text'] }}
-          </el-button>
+          </gj-button>
         </transition>
-      </el-tooltip>
+      </gj-tooltip>
     </div>
   </div>
 </template>

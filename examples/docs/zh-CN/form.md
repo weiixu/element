@@ -8,50 +8,50 @@
 
 :::demo 在 Form 组件中，每一个表单域由一个 Form-Item 组件构成，表单域中可以放置各种类型的表单控件，包括 Input、Select、Checkbox、Radio、Switch、DatePicker、TimePicker
 ```html
-<el-form ref="form" :model="form" label-width="80px">
-  <el-form-item label="活动名称">
-    <el-input v-model="form.name"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-select v-model="form.region" placeholder="请选择活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="活动时间">
-    <el-col :span="11">
-      <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%;"></el-time-picker>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="即时配送">
-    <el-switch v-model="form.delivery"></el-switch>
-  </el-form-item>
-  <el-form-item label="活动性质">
-    <el-checkbox-group v-model="form.type">
-      <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-      <el-checkbox label="地推活动" name="type"></el-checkbox>
-      <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-      <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="特殊资源">
-    <el-radio-group v-model="form.resource">
-      <el-radio label="线上品牌商赞助"></el-radio>
-      <el-radio label="线下场地免费"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item label="活动形式">
-    <el-input type="textarea" v-model="form.desc"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">立即创建</el-button>
-    <el-button>取消</el-button>
-  </el-form-item>
-</el-form>
+<gj-form ref="form" :model="form" label-width="80px">
+  <gj-form-item label="活动名称">
+    <gj-input v-model="form.name"></gj-input>
+  </gj-form-item>
+  <gj-form-item label="活动区域">
+    <gj-select v-model="form.region" placeholder="请选择活动区域">
+      <gj-option label="区域一" value="shanghai"></gj-option>
+      <gj-option label="区域二" value="beijing"></gj-option>
+    </gj-select>
+  </gj-form-item>
+  <gj-form-item label="活动时间">
+    <gj-col :span="11">
+      <gj-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></gj-date-picker>
+    </gj-col>
+    <gj-col class="line" :span="2">-</gj-col>
+    <gj-col :span="11">
+      <gj-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%;"></gj-time-picker>
+    </gj-col>
+  </gj-form-item>
+  <gj-form-item label="即时配送">
+    <gj-switch v-model="form.delivery"></gj-switch>
+  </gj-form-item>
+  <gj-form-item label="活动性质">
+    <gj-checkbox-group v-model="form.type">
+      <gj-checkbox label="美食/餐厅线上活动" name="type"></gj-checkbox>
+      <gj-checkbox label="地推活动" name="type"></gj-checkbox>
+      <gj-checkbox label="线下主题活动" name="type"></gj-checkbox>
+      <gj-checkbox label="单纯品牌曝光" name="type"></gj-checkbox>
+    </gj-checkbox-group>
+  </gj-form-item>
+  <gj-form-item label="特殊资源">
+    <gj-radio-group v-model="form.resource">
+      <gj-radio label="线上品牌商赞助"></gj-radio>
+      <gj-radio label="线下场地免费"></gj-radio>
+    </gj-radio-group>
+  </gj-form-item>
+  <gj-form-item label="活动形式">
+    <gj-input type="textarea" v-model="form.desc"></gj-input>
+  </gj-form-item>
+  <gj-form-item>
+    <gj-button type="primary" @click="onSubmit">立即创建</gj-button>
+    <gj-button>取消</gj-button>
+  </gj-form-item>
+</gj-form>
 <script>
   export default {
     data() {
@@ -82,7 +82,7 @@
 W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2)：
 > <i>When there is only one single-line text input field in a form, the user agent should accept Enter in that field as a request to submit the form.</i>
 
-即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 `<el-form>` 标签上添加 `@submit.native.prevent`。
+即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 `<gj-form>` 标签上添加 `@submit.native.prevent`。
 :::
 
 ### 行内表单
@@ -91,20 +91,20 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 设置 `inline` 属性可以让表单域变为行内的表单域
 ```html
-<el-form :inline="true" :model="formInline" class="demo-form-inline">
-  <el-form-item label="审批人">
-    <el-input v-model="formInline.user" placeholder="审批人"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-select v-model="formInline.region" placeholder="活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">查询</el-button>
-  </el-form-item>
-</el-form>
+<gj-form :inline="true" :model="formInline" class="demo-form-inline">
+  <gj-form-item label="审批人">
+    <gj-input v-model="formInline.user" placeholder="审批人"></gj-input>
+  </gj-form-item>
+  <gj-form-item label="活动区域">
+    <gj-select v-model="formInline.region" placeholder="活动区域">
+      <gj-option label="区域一" value="shanghai"></gj-option>
+      <gj-option label="区域二" value="beijing"></gj-option>
+    </gj-select>
+  </gj-form-item>
+  <gj-form-item>
+    <gj-button type="primary" @click="onSubmit">查询</gj-button>
+  </gj-form-item>
+</gj-form>
 <script>
   export default {
     data() {
@@ -131,23 +131,23 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 通过设置 `label-position` 属性可以改变表单域标签的位置，可选值为 `top`、`left`，当设为 `top` 时标签会置于表单域的顶部
 ```html
-<el-radio-group v-model="labelPosition" size="small">
-  <el-radio-button label="left">左对齐</el-radio-button>
-  <el-radio-button label="right">右对齐</el-radio-button>
-  <el-radio-button label="top">顶部对齐</el-radio-button>
-</el-radio-group>
+<gj-radio-group v-model="labelPosition" size="small">
+  <gj-radio-button label="left">左对齐</gj-radio-button>
+  <gj-radio-button label="right">右对齐</gj-radio-button>
+  <gj-radio-button label="top">顶部对齐</gj-radio-button>
+</gj-radio-group>
 <div style="margin: 20px;"></div>
-<el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
-  <el-form-item label="名称">
-    <el-input v-model="formLabelAlign.name"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-input v-model="formLabelAlign.region"></el-input>
-  </el-form-item>
-  <el-form-item label="活动形式">
-    <el-input v-model="formLabelAlign.type"></el-input>
-  </el-form-item>
-</el-form>
+<gj-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
+  <gj-form-item label="名称">
+    <gj-input v-model="formLabelAlign.name"></gj-input>
+  </gj-form-item>
+  <gj-form-item label="活动区域">
+    <gj-input v-model="formLabelAlign.region"></gj-input>
+  </gj-form-item>
+  <gj-form-item label="活动形式">
+    <gj-input v-model="formLabelAlign.type"></gj-input>
+  </gj-form-item>
+</gj-form>
 <script>
   export default {
     data() {
@@ -171,54 +171,54 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo Form 组件提供了表单验证的功能，只需要通过 `rules` 属性传入约定的验证规则，并将 Form-Item 的 `prop` 属性设置为需校验的字段名即可。校验规则参见 [async-validator](https://github.com/yiminghe/async-validator)
 ```html
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-  <el-form-item label="活动名称" prop="name">
-    <el-input v-model="ruleForm.name"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域" prop="region">
-    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="活动时间" required>
-    <el-col :span="11">
-      <el-form-item prop="date1">
-        <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
-      </el-form-item>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-form-item prop="date2">
-        <el-time-picker placeholder="选择时间" v-model="ruleForm.date2" style="width: 100%;"></el-time-picker>
-      </el-form-item>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="即时配送" prop="delivery">
-    <el-switch v-model="ruleForm.delivery"></el-switch>
-  </el-form-item>
-  <el-form-item label="活动性质" prop="type">
-    <el-checkbox-group v-model="ruleForm.type">
-      <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-      <el-checkbox label="地推活动" name="type"></el-checkbox>
-      <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-      <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="特殊资源" prop="resource">
-    <el-radio-group v-model="ruleForm.resource">
-      <el-radio label="线上品牌商赞助"></el-radio>
-      <el-radio label="线下场地免费"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item label="活动形式" prop="desc">
-    <el-input type="textarea" v-model="ruleForm.desc"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
-    <el-button @click="resetForm('ruleForm')">重置</el-button>
-  </el-form-item>
-</el-form>
+<gj-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+  <gj-form-item label="活动名称" prop="name">
+    <gj-input v-model="ruleForm.name"></gj-input>
+  </gj-form-item>
+  <gj-form-item label="活动区域" prop="region">
+    <gj-select v-model="ruleForm.region" placeholder="请选择活动区域">
+      <gj-option label="区域一" value="shanghai"></gj-option>
+      <gj-option label="区域二" value="beijing"></gj-option>
+    </gj-select>
+  </gj-form-item>
+  <gj-form-item label="活动时间" required>
+    <gj-col :span="11">
+      <gj-form-item prop="date1">
+        <gj-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></gj-date-picker>
+      </gj-form-item>
+    </gj-col>
+    <gj-col class="line" :span="2">-</gj-col>
+    <gj-col :span="11">
+      <gj-form-item prop="date2">
+        <gj-time-picker placeholder="选择时间" v-model="ruleForm.date2" style="width: 100%;"></gj-time-picker>
+      </gj-form-item>
+    </gj-col>
+  </gj-form-item>
+  <gj-form-item label="即时配送" prop="delivery">
+    <gj-switch v-model="ruleForm.delivery"></gj-switch>
+  </gj-form-item>
+  <gj-form-item label="活动性质" prop="type">
+    <gj-checkbox-group v-model="ruleForm.type">
+      <gj-checkbox label="美食/餐厅线上活动" name="type"></gj-checkbox>
+      <gj-checkbox label="地推活动" name="type"></gj-checkbox>
+      <gj-checkbox label="线下主题活动" name="type"></gj-checkbox>
+      <gj-checkbox label="单纯品牌曝光" name="type"></gj-checkbox>
+    </gj-checkbox-group>
+  </gj-form-item>
+  <gj-form-item label="特殊资源" prop="resource">
+    <gj-radio-group v-model="ruleForm.resource">
+      <gj-radio label="线上品牌商赞助"></gj-radio>
+      <gj-radio label="线下场地免费"></gj-radio>
+    </gj-radio-group>
+  </gj-form-item>
+  <gj-form-item label="活动形式" prop="desc">
+    <gj-input type="textarea" v-model="ruleForm.desc"></gj-input>
+  </gj-form-item>
+  <gj-form-item>
+    <gj-button type="primary" @click="submitForm('ruleForm')">立即创建</gj-button>
+    <gj-button @click="resetForm('ruleForm')">重置</gj-button>
+  </gj-form-item>
+</gj-form>
 <script>
   export default {
     data() {
@@ -285,21 +285,21 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 本例还使用`status-icon`属性为输入框添加了表示校验结果的反馈图标。
 ```html
-<el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-  <el-form-item label="密码" prop="pass">
-    <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
-  </el-form-item>
-  <el-form-item label="确认密码" prop="checkPass">
-    <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
-  </el-form-item>
-  <el-form-item label="年龄" prop="age">
-    <el-input v-model.number="ruleForm.age"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-    <el-button @click="resetForm('ruleForm')">重置</el-button>
-  </el-form-item>
-</el-form>
+<gj-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+  <gj-form-item label="密码" prop="pass">
+    <gj-input type="password" v-model="ruleForm.pass" autocomplete="off"></gj-input>
+  </gj-form-item>
+  <gj-form-item label="确认密码" prop="checkPass">
+    <gj-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></gj-input>
+  </gj-form-item>
+  <gj-form-item label="年龄" prop="age">
+    <gj-input v-model.number="ruleForm.age"></gj-input>
+  </gj-form-item>
+  <gj-form-item>
+    <gj-button type="primary" @click="submitForm('ruleForm')">提交</gj-button>
+    <gj-button @click="resetForm('ruleForm')">重置</gj-button>
+  </gj-form-item>
+</gj-form>
 <script>
   export default {
     data() {
@@ -385,8 +385,8 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 除了在 Form 组件上一次性传递所有的验证规则外还可以在单个的表单域上传递属性的验证规则
 ```html
-<el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
-  <el-form-item
+<gj-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
+  <gj-form-item
     prop="email"
     label="邮箱"
     :rules="[
@@ -394,9 +394,9 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
     ]"
   >
-    <el-input v-model="dynamicValidateForm.email"></el-input>
-  </el-form-item>
-  <el-form-item
+    <gj-input v-model="dynamicValidateForm.email"></gj-input>
+  </gj-form-item>
+  <gj-form-item
     v-for="(domain, index) in dynamicValidateForm.domains"
     :label="'域名' + index"
     :key="domain.key"
@@ -405,14 +405,14 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       required: true, message: '域名不能为空', trigger: 'blur'
     }"
   >
-    <el-input v-model="domain.value"></el-input><el-button @click.prevent="removeDomain(domain)">删除</el-button>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-    <el-button @click="addDomain">新增域名</el-button>
-    <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
-  </el-form-item>
-</el-form>
+    <gj-input v-model="domain.value"></gj-input><gj-button @click.prevent="removeDomain(domain)">删除</gj-button>
+  </gj-form-item>
+  <gj-form-item>
+    <gj-button type="primary" @click="submitForm('dynamicValidateForm')">提交</gj-button>
+    <gj-button @click="addDomain">新增域名</gj-button>
+    <gj-button @click="resetForm('dynamicValidateForm')">重置</gj-button>
+  </gj-form-item>
+</gj-form>
 <script>
   export default {
     data() {
@@ -461,8 +461,8 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 数字类型的验证需要在 `v-model` 处加上 `.number` 的修饰符，这是 `Vue` 自身提供的用于将绑定值转化为 `number` 类型的修饰符。
 ```html
-<el-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
-  <el-form-item
+<gj-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
+  <gj-form-item
     label="年龄"
     prop="age"
     :rules="[
@@ -470,13 +470,13 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       { type: 'number', message: '年龄必须为数字值'}
     ]"
   >
-    <el-input type="age" v-model.number="numberValidateForm.age" autocomplete="off"></el-input>
-  </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('numberValidateForm')">提交</el-button>
-    <el-button @click="resetForm('numberValidateForm')">重置</el-button>
-  </el-form-item>
-</el-form>
+    <gj-input type="age" v-model.number="numberValidateForm.age" autocomplete="off"></gj-input>
+  </gj-form-item>
+  <gj-form-item>
+    <gj-button type="primary" @click="submitForm('numberValidateForm')">提交</gj-button>
+    <gj-button @click="resetForm('numberValidateForm')">重置</gj-button>
+  </gj-form-item>
+</gj-form>
 <script>
   export default {
     data() {
@@ -516,43 +516,43 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 如果希望某个表单项或某个表单组件的尺寸不同于 Form 上的`size`属性，直接为这个表单项或表单组件设置自己的`size`即可。
 ```html
-<el-form ref="form" :model="sizeForm" label-width="80px" size="mini">
-  <el-form-item label="活动名称">
-    <el-input v-model="sizeForm.name"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-select v-model="sizeForm.region" placeholder="请选择活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
-  </el-form-item>
-  <el-form-item label="活动时间">
-    <el-col :span="11">
-      <el-date-picker type="date" placeholder="选择日期" v-model="sizeForm.date1" style="width: 100%;"></el-date-picker>
-    </el-col>
-    <el-col class="line" :span="2">-</el-col>
-    <el-col :span="11">
-      <el-time-picker placeholder="选择时间" v-model="sizeForm.date2" style="width: 100%;"></el-time-picker>
-    </el-col>
-  </el-form-item>
-  <el-form-item label="活动性质">
-    <el-checkbox-group v-model="sizeForm.type">
-      <el-checkbox-button label="美食/餐厅线上活动" name="type"></el-checkbox-button>
-      <el-checkbox-button label="地推活动" name="type"></el-checkbox-button>
-      <el-checkbox-button label="线下主题活动" name="type"></el-checkbox-button>
-    </el-checkbox-group>
-  </el-form-item>
-  <el-form-item label="特殊资源">
-    <el-radio-group v-model="sizeForm.resource" size="medium">
-      <el-radio border label="线上品牌商赞助"></el-radio>
-      <el-radio border label="线下场地免费"></el-radio>
-    </el-radio-group>
-  </el-form-item>
-  <el-form-item size="large">
-    <el-button type="primary" @click="onSubmit">立即创建</el-button>
-    <el-button>取消</el-button>
-  </el-form-item>
-</el-form>
+<gj-form ref="form" :model="sizeForm" label-width="80px" size="mini">
+  <gj-form-item label="活动名称">
+    <gj-input v-model="sizeForm.name"></gj-input>
+  </gj-form-item>
+  <gj-form-item label="活动区域">
+    <gj-select v-model="sizeForm.region" placeholder="请选择活动区域">
+      <gj-option label="区域一" value="shanghai"></gj-option>
+      <gj-option label="区域二" value="beijing"></gj-option>
+    </gj-select>
+  </gj-form-item>
+  <gj-form-item label="活动时间">
+    <gj-col :span="11">
+      <gj-date-picker type="date" placeholder="选择日期" v-model="sizeForm.date1" style="width: 100%;"></gj-date-picker>
+    </gj-col>
+    <gj-col class="line" :span="2">-</gj-col>
+    <gj-col :span="11">
+      <gj-time-picker placeholder="选择时间" v-model="sizeForm.date2" style="width: 100%;"></gj-time-picker>
+    </gj-col>
+  </gj-form-item>
+  <gj-form-item label="活动性质">
+    <gj-checkbox-group v-model="sizeForm.type">
+      <gj-checkbox-button label="美食/餐厅线上活动" name="type"></gj-checkbox-button>
+      <gj-checkbox-button label="地推活动" name="type"></gj-checkbox-button>
+      <gj-checkbox-button label="线下主题活动" name="type"></gj-checkbox-button>
+    </gj-checkbox-group>
+  </gj-form-item>
+  <gj-form-item label="特殊资源">
+    <gj-radio-group v-model="sizeForm.resource" size="medium">
+      <gj-radio border label="线上品牌商赞助"></gj-radio>
+      <gj-radio border label="线下场地免费"></gj-radio>
+    </gj-radio-group>
+  </gj-form-item>
+  <gj-form-item size="large">
+    <gj-button type="primary" @click="onSubmit">立即创建</gj-button>
+    <gj-button>取消</gj-button>
+  </gj-form-item>
+</gj-form>
 
 <script>
   export default {

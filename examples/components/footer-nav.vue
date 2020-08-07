@@ -90,10 +90,10 @@
     methods: {
       setNav() {
         let nav = navConfig[this.lang];
-        this.nav = [nav[0]].concat(nav[3].children);
-        nav[4].groups.map(group => group.list).forEach(list => {
-          this.nav = this.nav.concat(list);
-        });
+        this.nav = [nav[0]]; // [nav[0]].concat(nav[3].children);
+        // nav[4].groups.map(group => group.list).forEach(list => {
+        //   this.nav = this.nav.concat(list);
+        // });
       },
 
       updateNav() {

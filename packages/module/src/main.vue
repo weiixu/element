@@ -18,7 +18,7 @@ export default {
   computed: {
     getName() {
       return this.getCompName(this.name);
-    },
+    }
   },
   // mounted() {
   //   this.init();

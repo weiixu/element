@@ -65,7 +65,7 @@
 ### 实例
 
 :::tip
-部分组件存在父子调用关系，可打包成一个组件。例如：`<gj-module name="gj-table-group"><el-table>...</el-table></gj-module>`。
+部分组件存在父子调用关系，可打包成一个组件。例如：`<gj-module name="gj-table-group"><gj-table>...</gj-table></gj-module>`。
 :::
 
 :::demo
@@ -73,7 +73,7 @@
 <gj-module name="el-container" style="height: 500px; border: 1px solid #eee" >
   <gj-module name="el-aside" width="200px" style="background-color: rgb(238, 241, 246)">
     <gj-module name="el-menu" :default-openeds="['1', '3']">
-      <el-submenu index="1">
+      <gj-submenu index="1">
         <template slot="title"><i class="el-icon-message"></i>导航一</template>
         <gj-module name="el-menu-item-group">
           <template slot="title">分组一</template>
@@ -83,12 +83,12 @@
         <gj-module name="el-menu-item-group" title="分组2">
           <gj-module name="el-menu-item" index="1-3">选项3</gj-module>
         </gj-module>
-        <el-submenu index="1-4">
+        <gj-submenu index="1-4">
           <template slot="title">选项4</template>
           <gj-module name="el-menu-item" index="1-4-1">选项4-1</gj-module>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="2">
+        </gj-submenu>
+      </gj-submenu>
+      <gj-submenu index="2">
         <template slot="title"><i class="el-icon-menu"></i>导航二</template>
         <gj-module name="el-menu-item-group">
           <template slot="title">分组一</template>
@@ -98,12 +98,12 @@
         <gj-module name="el-menu-item-group" title="分组2">
           <gj-module name="el-menu-item" index="2-3">选项3</gj-module>
         </gj-module>
-        <el-submenu index="2-4">
+        <gj-submenu index="2-4">
           <template slot="title">选项4</template>
           <gj-module name="el-menu-item" index="2-4-1">选项4-1</gj-module>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="3">
+        </gj-submenu>
+      </gj-submenu>
+      <gj-submenu index="3">
         <template slot="title"><i class="el-icon-setting"></i>导航三</template>
         <gj-module name="el-menu-item-group">
           <template slot="title">分组一</template>
@@ -113,32 +113,32 @@
         <gj-module name="el-menu-item-group" title="分组2">
           <gj-module name="el-menu-item" index="3-3">选项3</gj-module>
         </gj-module>
-        <el-submenu index="3-4">
+        <gj-submenu index="3-4">
           <template slot="title">选项4</template>
           <gj-module name="el-menu-item" index="3-4-1">选项4-1</gj-module>
-        </el-submenu>
-      </el-submenu>
+        </gj-submenu>
+      </gj-submenu>
     </gj-module>
   </gj-module>
   
   <gj-module name="el-container">
-    <el-header name="el-header" style="text-align: right; font-size: 12px">
-      <el-dropdown>
+    <gj-header name="el-header" style="text-align: right; font-size: 12px">
+      <gj-dropdown>
         <i class="el-icon-setting" style="margin-right: 15px"></i>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>查看</el-dropdown-item>
-          <el-dropdown-item>新增</el-dropdown-item>
-          <el-dropdown-item>删除</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+        <gj-dropdown-menu slot="dropdown">
+          <gj-dropdown-item>查看</gj-dropdown-item>
+          <gj-dropdown-item>新增</gj-dropdown-item>
+          <gj-dropdown-item>删除</gj-dropdown-item>
+        </gj-dropdown-menu>
+      </gj-dropdown>
       <span>王小虎</span>
-    </el-header>
+    </gj-header>
     <gj-module name="el-main">
-      <el-table :data="tableData">
-        <el-table-column prop="date" label="日期" width="140"></el-table-column>
-        <el-table-column prop="name" label="姓名" width="120"></el-table-column>
-        <el-table-column prop="address" label="地址"></el-table-column>
-      </el-table>
+      <gj-table :data="tableData">
+        <gj-table-column prop="date" label="日期" width="140"></gj-table-column>
+        <gj-table-column prop="name" label="姓名" width="120"></gj-table-column>
+        <gj-table-column prop="address" label="地址"></gj-table-column>
+      </gj-table>
     </gj-module>
   </gj-module>
 </gj-module>
