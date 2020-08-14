@@ -82,11 +82,11 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import Drawer from '../packages/drawer/index.js';
 import Popconfirm from '../packages/popconfirm/index.js';
+import Module from '../packages/module/index.js';
+import Panel from '../packages/panel/index.js';
+import Page from '../packages/page/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
-
-// custom
-import Module from '../packages/module/index.js';
 
 const components = [
   Pagination,
@@ -166,8 +166,10 @@ const components = [
   Avatar,
   Drawer,
   Popconfirm,
-  CollapseTransition,
-  Module
+  Module,
+  Panel,
+  Page,
+  CollapseTransition
 ];
 
 const install = function(Vue, opts = {}) {
@@ -176,9 +178,8 @@ const install = function(Vue, opts = {}) {
 
   components.forEach(component => {
     let name = component.name;
-    // 统一修改为Gj
     if (name.indexOf('El') === 0) {
-      name = name.replace('El', 'Gj');
+      name = name.replace('El', 'G');
     }
     Vue.component(name, component);
   });
@@ -294,5 +295,7 @@ export default {
   Avatar,
   Drawer,
   Popconfirm,
-  Module
+  Module,
+  Panel,
+  Page
 };

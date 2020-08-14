@@ -11,23 +11,23 @@
 <template>
   <div class="block">
     <span class="demonstration">默认</span>
-    <gj-slider v-model="value1"></gj-slider>
+    <g-slider v-model="value1"></g-slider>
   </div>
   <div class="block">
     <span class="demonstration">自定义初始值</span>
-    <gj-slider v-model="value2"></gj-slider>
+    <g-slider v-model="value2"></g-slider>
   </div>
   <div class="block">
     <span class="demonstration">隐藏 Tooltip</span>
-    <gj-slider v-model="value3" :show-tooltip="false"></gj-slider>
+    <g-slider v-model="value3" :show-tooltip="false"></g-slider>
   </div>
   <div class="block">
     <span class="demonstration">格式化 Tooltip</span>
-    <gj-slider v-model="value4" :format-tooltip="formatTooltip"></gj-slider>
+    <g-slider v-model="value4" :format-tooltip="formatTooltip"></g-slider>
   </div>
   <div class="block">
     <span class="demonstration">禁用</span>
-    <gj-slider v-model="value5" disabled></gj-slider>
+    <g-slider v-model="value5" disabled></g-slider>
   </div>
 </template>
 
@@ -61,18 +61,18 @@
 <template>
   <div class="block">
     <span class="demonstration">不显示间断点</span>
-    <gj-slider
+    <g-slider
       v-model="value1"
       :step="10">
-    </gj-slider>
+    </g-slider>
   </div>
   <div class="block">
     <span class="demonstration">显示间断点</span>
-    <gj-slider
+    <g-slider
       v-model="value2"
       :step="10"
       show-stops>
-    </gj-slider>
+    </g-slider>
   </div>
 </template>
 
@@ -97,10 +97,10 @@
 ```html
 <template>
   <div class="block">
-    <gj-slider
+    <g-slider
       v-model="value"
       show-input>
-    </gj-slider>
+    </g-slider>
   </div>
 </template>
 
@@ -124,12 +124,12 @@
 ```html
 <template>
   <div class="block">
-    <gj-slider
+    <g-slider
       v-model="value"
       range
       show-stops
       :max="10">
-    </gj-slider>
+    </g-slider>
   </div>
 </template>
 
@@ -151,11 +151,11 @@
 ```html
 <template>
   <div class="block">
-    <gj-slider
+    <g-slider
       v-model="value"
       vertical
       height="200px">
-    </gj-slider>
+    </g-slider>
   </div>
 </template>
 
@@ -177,11 +177,11 @@
 ```html
 <template>
   <div class="block">
-    <gj-slider
+    <g-slider
       v-model="value"
       range
       :marks="marks">
-    </gj-slider>
+    </g-slider>
   </div>
 </template>
 

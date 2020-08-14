@@ -7,11 +7,11 @@
 :::demo Progress 组件设置`percentage`属性即可，表示进度条对应的百分比，**必填**，必须在 0-100。通过 `format` 属性来指定进度条文字内容。
 
 ```html
-<gj-progress :percentage="50"></gj-progress>
-<gj-progress :percentage="100" :format="format"></gj-progress>
-<gj-progress :percentage="100" status="success"></gj-progress>
-<gj-progress :percentage="100" status="warning"></gj-progress>
-<gj-progress :percentage="50" status="exception"></gj-progress>
+<g-progress :percentage="50"></g-progress>
+<g-progress :percentage="100" :format="format"></g-progress>
+<g-progress :percentage="100" status="success"></g-progress>
+<g-progress :percentage="100" status="warning"></g-progress>
+<g-progress :percentage="50" status="exception"></g-progress>
 
 <script>
   export default {
@@ -32,10 +32,10 @@
 :::demo Progress 组件可通过 `stroke-width` 属性更改进度条的高度，并可通过 `text-inside` 属性来将进度条描述置于进度条内部。
 
 ```html
-<gj-progress :text-inside="true" :stroke-width="26" :percentage="70"></gj-progress>
-<gj-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></gj-progress>
-<gj-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></gj-progress>
-<gj-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></gj-progress>
+<g-progress :text-inside="true" :stroke-width="26" :percentage="70"></g-progress>
+<g-progress :text-inside="true" :stroke-width="24" :percentage="100" status="success"></g-progress>
+<g-progress :text-inside="true" :stroke-width="22" :percentage="80" status="warning"></g-progress>
+<g-progress :text-inside="true" :stroke-width="20" :percentage="50" status="exception"></g-progress>
 ```
 :::
 
@@ -46,16 +46,16 @@
 :::demo
 
 ```html
-<gj-progress :percentage="percentage" :color="customColor"></gj-progress>
+<g-progress :percentage="percentage" :color="customColor"></g-progress>
 
-<gj-progress :percentage="percentage" :color="customColorMethod"></gj-progress>
+<g-progress :percentage="percentage" :color="customColorMethod"></g-progress>
 
-<gj-progress :percentage="percentage" :color="customColors"></gj-progress>
+<g-progress :percentage="percentage" :color="customColors"></g-progress>
 <div>
-  <gj-button-group>
-    <gj-button icon="el-icon-minus" @click="decrease"></gj-button>
-    <gj-button icon="el-icon-plus" @click="increase"></gj-button>
-  </gj-button-group>
+  <g-button-group>
+    <g-button icon="el-icon-minus" @click="decrease"></g-button>
+    <g-button icon="el-icon-plus" @click="increase"></g-button>
+  </g-button-group>
 </div>
 
 <script>
@@ -108,11 +108,11 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 :::demo
 
 ```html
-<gj-progress type="circle" :percentage="0"></gj-progress>
-<gj-progress type="circle" :percentage="25"></gj-progress>
-<gj-progress type="circle" :percentage="100" status="success"></gj-progress>
-<gj-progress type="circle" :percentage="70" status="warning"></gj-progress>
-<gj-progress type="circle" :percentage="50" status="exception"></gj-progress>
+<g-progress type="circle" :percentage="0"></g-progress>
+<g-progress type="circle" :percentage="25"></g-progress>
+<g-progress type="circle" :percentage="100" status="success"></g-progress>
+<g-progress type="circle" :percentage="70" status="warning"></g-progress>
+<g-progress type="circle" :percentage="50" status="exception"></g-progress>
 ```
 :::
 
@@ -122,12 +122,12 @@ Progress 组件可通过 `type` 属性来指定使用环形进度条，在环形
 
 ```html
 
-<gj-progress type="dashboard" :percentage="percentage" :color="colors"></gj-progress>
+<g-progress type="dashboard" :percentage="percentage" :color="colors"></g-progress>
 <div>
-  <gj-button-group>
-    <gj-button icon="el-icon-minus" @click="decrease"></gj-button>
-    <gj-button icon="el-icon-plus" @click="increase"></gj-button>
-  </gj-button-group>
+  <g-button-group>
+    <g-button icon="el-icon-minus" @click="decrease"></g-button>
+    <g-button icon="el-icon-plus" @click="increase"></g-button>
+  </g-button-group>
 </div>
 
 <script>

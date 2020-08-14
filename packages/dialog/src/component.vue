@@ -6,7 +6,8 @@
     <div
       v-show="visible"
       class="el-dialog__wrapper"
-      @click.self="handleWrapperClick">
+      @click.self="handleWrapperClick" 
+      v-dragMove="drag ? {header: '.el-dialog__header', wrap:'.el-dialog', excludeClass:'is-fullscreen'} : {}" v-dragLayout="drag ? '.el-dialog' : ''">
       <div
         role="dialog"
         :key="key"
@@ -19,14 +20,24 @@
           <slot name="title">
             <span class="el-dialog__title">{{ title }}</span>
           </slot>
+          <div class="el-dialog__headertool">
           <button
             type="button"
+            aria-label="screen"
             class="el-dialog__headerbtn"
+            v-if="showFullscreen"
+            @click="handleFullscreen">
+            <i class="el-dialog__full-screen el-icon el-icon-full-screen"></i>
+          </button>
+          <button
+            type="button"
             aria-label="Close"
+            class="el-dialog__headerbtn"
             v-if="showClose"
             @click="handleClose">
             <i class="el-dialog__close el-icon el-icon-close"></i>
           </button>
+          </div>
         </div>
         <div class="el-dialog__body" v-if="rendered"><slot></slot></div>
         <div class="el-dialog__footer" v-if="$slots.footer">
@@ -41,11 +52,16 @@
   import Popup from 'element-ui/src/utils/popup';
   import Migrating from 'element-ui/src/mixins/migrating';
   import emitter from 'element-ui/src/mixins/emitter';
-
+  import { dragMove, dragLayout } from 'element-ui/src/directives/dragMove';
   export default {
     name: 'ElDialog',
 
     mixins: [Popup, emitter, Migrating],
+
+    directives: {
+      dragMove,
+      dragLayout
+    },
 
     props: {
       title: {
@@ -83,6 +99,11 @@
         default: true
       },
 
+      showFullscreen: {
+        type: Boolean,
+        default: false
+      },
+
       showClose: {
         type: Boolean,
         default: true
@@ -91,6 +112,8 @@
       width: String,
 
       fullscreen: Boolean,
+  
+      drag: Boolean,
 
       customClass: {
         type: String,
@@ -165,6 +188,9 @@
       handleWrapperClick() {
         if (!this.closeOnClickModal) return;
         this.handleClose();
+      },
+      handleFullscreen() {
+        this.fullscreen = !this.fullscreen;
       },
       handleClose() {
         if (typeof this.beforeClose === 'function') {

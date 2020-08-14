@@ -8,19 +8,19 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
 :::demo 需要设置`visible`属性，它接收`Boolean`，当为`true`时显示 Dialog。Dialog 分为两个部分：`body`和`footer`，`footer`需要具名为`footer`的`slot`。`title`属性用于定义标题，它是可选的，默认值为空。最后，本例还展示了`before-close`的用法。
 
 ```html
-<gj-button type="text" @click="dialogVisible = true">点击打开 Dialog</gj-button>
+<g-button type="text" @click="dialogVisible = true">点击打开 Dialog</g-button>
 
-<gj-dialog
+<g-dialog
   title="提示"
   :visible.sync="dialogVisible"
   width="30%"
   :before-close="handleClose">
   <span>这是一段信息</span>
   <span slot="footer" class="dialog-footer">
-    <gj-button @click="dialogVisible = false">取 消</gj-button>
-    <gj-button type="primary" @click="dialogVisible = false">确 定</gj-button>
+    <g-button @click="dialogVisible = false">取 消</g-button>
+    <g-button type="primary" @click="dialogVisible = false">确 定</g-button>
   </span>
-</gj-dialog>
+</g-dialog>
 
 <script>
   export default {
@@ -54,36 +54,36 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 :::demo
 ```html
 <!-- Table -->
-<gj-button type="text" @click="dialogTableVisible = true">打开嵌套表格的 Dialog</gj-button>
+<g-button type="text" @click="dialogTableVisible = true">打开嵌套表格的 Dialog</g-button>
 
-<gj-dialog title="收货地址" :visible.sync="dialogTableVisible">
-  <gj-table :data="gridData">
-    <gj-table-column property="date" label="日期" width="150"></gj-table-column>
-    <gj-table-column property="name" label="姓名" width="200"></gj-table-column>
-    <gj-table-column property="address" label="地址"></gj-table-column>
-  </gj-table>
-</gj-dialog>
+<g-dialog title="收货地址" :visible.sync="dialogTableVisible">
+  <g-table :data="gridData">
+    <g-table-column property="date" label="日期" width="150"></g-table-column>
+    <g-table-column property="name" label="姓名" width="200"></g-table-column>
+    <g-table-column property="address" label="地址"></g-table-column>
+  </g-table>
+</g-dialog>
 
 <!-- Form -->
-<gj-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</gj-button>
+<g-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</g-button>
 
-<gj-dialog title="收货地址" :visible.sync="dialogFormVisible">
-  <gj-form :model="form">
-    <gj-form-item label="活动名称" :label-width="formLabelWidth">
-      <gj-input v-model="form.name" autocomplete="off"></gj-input>
-    </gj-form-item>
-    <gj-form-item label="活动区域" :label-width="formLabelWidth">
-      <gj-select v-model="form.region" placeholder="请选择活动区域">
-        <gj-option label="区域一" value="shanghai"></gj-option>
-        <gj-option label="区域二" value="beijing"></gj-option>
-      </gj-select>
-    </gj-form-item>
-  </gj-form>
+<g-dialog title="收货地址" :visible.sync="dialogFormVisible">
+  <g-form :model="form">
+    <g-form-item label="活动名称" :label-width="formLabelWidth">
+      <g-input v-model="form.name" autocomplete="off"></g-input>
+    </g-form-item>
+    <g-form-item label="活动区域" :label-width="formLabelWidth">
+      <g-select v-model="form.region" placeholder="请选择活动区域">
+        <g-option label="区域一" value="shanghai"></g-option>
+        <g-option label="区域二" value="beijing"></g-option>
+      </g-select>
+    </g-form-item>
+  </g-form>
   <div slot="footer" class="dialog-footer">
-    <gj-button @click="dialogFormVisible = false">取 消</gj-button>
-    <gj-button type="primary" @click="dialogFormVisible = false">确 定</gj-button>
+    <g-button @click="dialogFormVisible = false">取 消</g-button>
+    <g-button type="primary" @click="dialogFormVisible = false">确 定</g-button>
   </div>
-</gj-dialog>
+</g-dialog>
 
 <script>
   export default {
@@ -131,20 +131,20 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 :::demo 正常情况下，我们不建议使用嵌套的 Dialog，如果需要在页面上同时显示多个 Dialog，可以将它们平级放置。对于确实需要嵌套 Dialog 的场景，我们提供了`append-to-body`属性。将内层 Dialog 的该属性设置为 true，它就会插入至 body 元素上，从而保证内外层 Dialog 和遮罩层级关系的正确。
 ```html
 <template>
-  <gj-button type="text" @click="outerVisible = true">点击打开外层 Dialog</gj-button>
+  <g-button type="text" @click="outerVisible = true">点击打开外层 Dialog</g-button>
   
-  <gj-dialog title="外层 Dialog" :visible.sync="outerVisible">
-    <gj-dialog
+  <g-dialog title="外层 Dialog" :visible.sync="outerVisible">
+    <g-dialog
       width="30%"
       title="内层 Dialog"
       :visible.sync="innerVisible"
       append-to-body>
-    </gj-dialog>
+    </g-dialog>
     <div slot="footer" class="dialog-footer">
-      <gj-button @click="outerVisible = false">取 消</gj-button>
-      <gj-button type="primary" @click="innerVisible = true">打开内层 Dialog</gj-button>
+      <g-button @click="outerVisible = false">取 消</g-button>
+      <g-button type="primary" @click="innerVisible = true">打开内层 Dialog</g-button>
     </div>
-  </gj-dialog>
+  </g-dialog>
 </template>
 
 <script>
@@ -167,19 +167,19 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 :::demo 将`center`设置为`true`即可使标题和底部居中。`center`仅影响标题和底部区域。Dialog 的内容是任意的，在一些情况下，内容并不适合居中布局。如果需要内容也水平居中，请自行为其添加 CSS。
 
 ```html
-<gj-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</gj-button>
+<g-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</g-button>
 
-<gj-dialog
+<g-dialog
   title="提示"
   :visible.sync="centerDialogVisible"
   width="30%"
   center>
   <span>需要注意的是内容是默认不居中的</span>
   <span slot="footer" class="dialog-footer">
-    <gj-button @click="centerDialogVisible = false">取 消</gj-button>
-    <gj-button type="primary" @click="centerDialogVisible = false">确 定</gj-button>
+    <g-button @click="centerDialogVisible = false">取 消</g-button>
+    <g-button type="primary" @click="centerDialogVisible = false">确 定</g-button>
   </span>
-</gj-dialog>
+</g-dialog>
 
 <script>
   export default {
@@ -201,6 +201,39 @@ Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默�
 如果 `visible` 属性绑定的变量位于 Vuex 的 store 内，那么 `.sync` 不会正常工作。此时需要去除 `.sync` 修饰符，同时监听 Dialog 的 `open` 和 `close` 事件，在事件回调中执行 Vuex 中对应的 mutation 更新 `visible` 属性绑定的变量的值。
 :::
 
+### 拖拽布局
+
+标题点击拖拽和右下边框可拖拽调整宽高尺寸
+
+:::demo 将`drag`设置为`true`即可拖拽。`拖拽`影响内容展示。Dialog 的内容是任意的，在一些情况下，内容并不适合拖拽。如果需要拖拽，请自行适配。
+
+```html
+<g-button type="text" @click="dragDialogVisible = true">点击打开 Dialog</g-button>
+
+<g-dialog
+  title="提示"
+  :visible.sync="dragDialogVisible"
+  width="30%"
+  drag>
+  <span>需要注意的是拖拽宽高影响内容显示</span>
+  <span slot="footer" class="dialog-footer">
+    <g-button @click="dragDialogVisible = false">取 消</g-button>
+    <g-button type="primary" @click="dragDialogVisible = false">确 定</g-button>
+  </span>
+</g-dialog>
+
+<script>
+  export default {
+    data() {
+      return {
+        dragDialogVisible: false
+      };
+    }
+  };
+</script>
+```
+:::
+
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
@@ -217,7 +250,9 @@ Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默�
 | close-on-click-modal | 是否可以通过点击 modal 关闭 Dialog | boolean    | — | true |
 | close-on-press-escape | 是否可以通过按下 ESC 关闭 Dialog | boolean    | — | true |
 | show-close | 是否显示关闭按钮 | boolean    | — | true |
+| show-fullscreen | 是否显示全屏按钮 | boolean    | — | false |
 | before-close | 关闭前的回调，会暂停 Dialog 的关闭 | function(done)，done 用于关闭 Dialog | — | — |
+| drag | 是否使用拖拽 | boolean | — | false |
 | center | 是否对头部和底部采用居中布局 | boolean | — | false |
 | destroy-on-close | 关闭时销毁 Dialog 中的元素 | boolean | — | false |
 

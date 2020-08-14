@@ -1,17 +1,17 @@
 <template>
   <section class="config" :key="displayName">
     <div class="config-label">
-      <gj-tooltip :content="displayName" placement="top">
+      <g-tooltip :content="displayName" placement="top">
         <span>{{displayKeyName}}</span>
-      </gj-tooltip>
-      <gj-button 
+      </g-tooltip>
+      <g-button 
         class="plus-button" 
         size="mini" 
         round 
         icon="el-icon-plus"
         @click.stop="onAddShadow"
       >
-      </gj-button>
+      </g-button>
     </div>
     <div class="config-content" v-for="(each, key) in valueArr" :key="key">
       <div class="content-10">
@@ -61,12 +61,12 @@
         <span class="content-tip">Blur</span>
       </div>
       <div class="content-10">
-        <gj-button 
+        <g-button 
           size="mini" 
           round 
           icon="el-icon-minus"
           @click.stop="val => onMinusShadow(key)"
-        ></gj-button>
+        ></g-button>
       </div>
     </div>
   </section>

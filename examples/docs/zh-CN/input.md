@@ -14,7 +14,7 @@ Input 为受控组件，它**总会显示 Vue 绑定值**。
 
 :::demo
 ```html
-<gj-input v-model="input" placeholder="请输入内容"></gj-input>
+<g-input v-model="input" placeholder="请输入内容"></g-input>
 
 <script>
 export default {
@@ -33,11 +33,11 @@ export default {
 
 :::demo 通过 `disabled` 属性指定是否禁用 input 组件
 ```html
-<gj-input
+<g-input
   placeholder="请输入内容"
   v-model="input"
   :disabled="true">
-</gj-input>
+</g-input>
 
 <script>
 export default {
@@ -56,11 +56,11 @@ export default {
 :::demo 使用`clearable`属性即可得到一个可清空的输入框
 
 ```html
-<gj-input
+<g-input
   placeholder="请输入内容"
   v-model="input"
   clearable>
-</gj-input>
+</g-input>
 
 <script>
   export default {
@@ -79,7 +79,7 @@ export default {
 :::demo 使用`show-password`属性即可得到一个可切换显示隐藏的密码框
 
 ```html
-<gj-input placeholder="请输入密码" v-model="input" show-password></gj-input>
+<g-input placeholder="请输入密码" v-model="input" show-password></g-input>
 
 <script>
   export default {
@@ -101,29 +101,29 @@ export default {
 ```html
 <div class="demo-input-suffix">
   属性方式：
-  <gj-input
+  <g-input
     placeholder="请选择日期"
     suffix-icon="el-icon-date"
     v-model="input1">
-  </gj-input>
-  <gj-input
+  </g-input>
+  <g-input
     placeholder="请输入内容"
     prefix-icon="el-icon-search"
     v-model="input2">
-  </gj-input>
+  </g-input>
 </div>
 <div class="demo-input-suffix">
   slot 方式：
-  <gj-input
+  <g-input
     placeholder="请选择日期"
     v-model="input3">
     <i slot="suffix" class="el-input__icon el-icon-date"></i>
-  </gj-input>
-  <gj-input
+  </g-input>
+  <g-input
     placeholder="请输入内容"
     v-model="input4">
     <i slot="prefix" class="el-input__icon el-icon-search"></i>
-  </gj-input>
+  </g-input>
 </div>
 
 <script>
@@ -147,12 +147,12 @@ export default {
 
 :::demo 文本域高度可通过 `rows` 属性控制
 ```html
-<gj-input
+<g-input
   type="textarea"
   :rows="2"
   placeholder="请输入内容"
   v-model="textarea">
-</gj-input>
+</g-input>
 
 <script>
 export default {
@@ -172,19 +172,19 @@ export default {
 
 :::demo
 ```html
-<gj-input
+<g-input
   type="textarea"
   autosize
   placeholder="请输入内容"
   v-model="textarea1">
-</gj-input>
+</g-input>
 <div style="margin: 20px 0;"></div>
-<gj-input
+<g-input
   type="textarea"
   :autosize="{ minRows: 2, maxRows: 4}"
   placeholder="请输入内容"
   v-model="textarea2">
-</gj-input>
+</g-input>
 
 <script>
 export default {
@@ -206,24 +206,24 @@ export default {
 :::demo 可通过 slot 来指定在 input 中前置或者后置内容。
 ```html
 <div>
-  <gj-input placeholder="请输入内容" v-model="input1">
+  <g-input placeholder="请输入内容" v-model="input1">
     <template slot="prepend">Http://</template>
-  </gj-input>
+  </g-input>
 </div>
 <div style="margin-top: 15px;">
-  <gj-input placeholder="请输入内容" v-model="input2">
+  <g-input placeholder="请输入内容" v-model="input2">
     <template slot="append">.com</template>
-  </gj-input>
+  </g-input>
 </div>
 <div style="margin-top: 15px;">
-  <gj-input placeholder="请输入内容" v-model="input3" class="input-with-select">
-    <gj-select v-model="select" slot="prepend" placeholder="请选择">
-      <gj-option label="餐厅名" value="1"></gj-option>
-      <gj-option label="订单号" value="2"></gj-option>
-      <gj-option label="用户电话" value="3"></gj-option>
-    </gj-select>
-    <gj-button slot="append" icon="el-icon-search"></gj-button>
-  </gj-input>
+  <g-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+    <g-select v-model="select" slot="prepend" placeholder="请选择">
+      <g-option label="餐厅名" value="1"></g-option>
+      <g-option label="订单号" value="2"></g-option>
+      <g-option label="用户电话" value="3"></g-option>
+    </g-select>
+    <g-button slot="append" icon="el-icon-search"></g-button>
+  </g-input>
 </div>
 <style>
   .el-select .el-input {
@@ -253,29 +253,29 @@ export default {
 :::demo 可通过 `size` 属性指定输入框的尺寸，除了默认的大小外，还提供了 large、small 和 mini 三种尺寸。
 ```html
 <div class="demo-input-size">
-  <gj-input
+  <g-input
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
     v-model="input1">
-  </gj-input>
-  <gj-input
+  </g-input>
+  <g-input
     size="medium"
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
     v-model="input2">
-  </gj-input>
-  <gj-input
+  </g-input>
+  <g-input
     size="small"
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
     v-model="input3">
-  </gj-input>
-  <gj-input
+  </g-input>
+  <g-input
     size="mini"
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
     v-model="input4">
-  </gj-input>
+  </g-input>
 </div>
 
 <script>
@@ -299,29 +299,29 @@ export default {
 
 :::demo autocomplete 是一个可带输入建议的输入框组件，`fetch-suggestions` 是一个返回输入建议的方法属性，如 querySearch(queryString, cb)，在该方法中你可以在你的输入建议数据准备好时通过 cb(data) 返回到 autocomplete 组件中。
 ```html
-<gj-row class="demo-autocomplete">
-  <gj-col :span="12">
+<g-row class="demo-autocomplete">
+  <g-col :span="12">
     <div class="sub-title">激活即列出输入建议</div>
-    <gj-autocomplete
+    <g-autocomplete
       class="inline-input"
       v-model="state1"
       :fetch-suggestions="querySearch"
       placeholder="请输入内容"
       @select="handleSelect"
-    ></gj-autocomplete>
-  </gj-col>
-  <gj-col :span="12">
+    ></g-autocomplete>
+  </g-col>
+  <g-col :span="12">
     <div class="sub-title">输入后匹配输入建议</div>
-    <gj-autocomplete
+    <g-autocomplete
       class="inline-input"
       v-model="state2"
       :fetch-suggestions="querySearch"
       placeholder="请输入内容"
       :trigger-on-focus="false"
       @select="handleSelect"
-    ></gj-autocomplete>
-  </gj-col>
-</gj-row>
+    ></g-autocomplete>
+  </g-col>
+</g-row>
 <script>
   export default {
     data() {
@@ -413,7 +413,7 @@ export default {
 
 :::demo 使用`scoped slot`自定义输入建议的模板。该 scope 的参数为`item`，表示当前输入建议对象。
 ```html
-<gj-autocomplete
+<g-autocomplete
   popper-class="my-autocomplete"
   v-model="state"
   :fetch-suggestions="querySearch"
@@ -428,7 +428,7 @@ export default {
     <div class="name">{{ item.value }}</div>
     <span class="addr">{{ item.address }}</span>
   </template>
-</gj-autocomplete>
+</g-autocomplete>
 
 <style>
 .my-autocomplete {
@@ -545,12 +545,12 @@ export default {
 
 :::demo
 ```html
-<gj-autocomplete
+<g-autocomplete
   v-model="state"
   :fetch-suggestions="querySearchAsync"
   placeholder="请输入内容"
   @select="handleSelect"
-></gj-autocomplete>
+></g-autocomplete>
 <script>
   export default {
     data() {
@@ -643,23 +643,23 @@ export default {
 
 :::demo  `maxlength` 和 `minlength` 是原生属性，用来限制输入框的字符长度，其中字符长度是用 Javascript 的字符串长度统计的。对于类型为 `text` 或 `textarea` 的输入框，在使用 `maxlength` 属性限制最大输入长度的同时，可通过设置 `show-word-limit` 属性来展示字数统计。
 ```html
-<gj-input
+<g-input
   type="text"
   placeholder="请输入内容"
   v-model="text"
   maxlength="10"
   show-word-limit
 >
-</gj-input>
+</g-input>
 <div style="margin: 20px 0;"></div>
-<gj-input
+<g-input
   type="textarea"
   placeholder="请输入内容"
   v-model="textarea"
   maxlength="30"
   show-word-limit
 >
-</gj-input>
+</g-input>
 
 <script>
 export default {

@@ -10,7 +10,7 @@
 ```html
 <template>
   <!-- `checked` 为 true 或 false -->
-  <gj-checkbox v-model="checked">备选项</gj-checkbox>
+  <g-checkbox v-model="checked">备选项</g-checkbox>
 </template>
 <script>
   export default {
@@ -32,8 +32,8 @@
 
 ```html
 <template>
-  <gj-checkbox v-model="checked1" disabled>备选项1</gj-checkbox>
-  <gj-checkbox v-model="checked2" disabled>备选项</gj-checkbox>
+  <g-checkbox v-model="checked1" disabled>备选项1</g-checkbox>
+  <g-checkbox v-model="checked2" disabled>备选项</g-checkbox>
 </template>
 <script>
   export default {
@@ -56,13 +56,13 @@
 
 ```html
 <template>
-  <gj-checkbox-group v-model="checkList">
-    <gj-checkbox label="复选框 A"></gj-checkbox>
-    <gj-checkbox label="复选框 B"></gj-checkbox>
-    <gj-checkbox label="复选框 C"></gj-checkbox>
-    <gj-checkbox label="禁用" disabled></gj-checkbox>
-    <gj-checkbox label="选中且禁用" disabled></gj-checkbox>
-  </gj-checkbox-group>
+  <g-checkbox-group v-model="checkList">
+    <g-checkbox label="复选框 A"></g-checkbox>
+    <g-checkbox label="复选框 B"></g-checkbox>
+    <g-checkbox label="复选框 C"></g-checkbox>
+    <g-checkbox label="禁用" disabled></g-checkbox>
+    <g-checkbox label="选中且禁用" disabled></g-checkbox>
+  </g-checkbox-group>
 </template>
 
 <script>
@@ -85,11 +85,11 @@
 
 ```html
 <template>
-  <gj-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</gj-checkbox>
+  <g-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</g-checkbox>
   <div style="margin: 15px 0;"></div>
-  <gj-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
-    <gj-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</gj-checkbox>
-  </gj-checkbox-group>
+  <g-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
+    <g-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</g-checkbox>
+  </g-checkbox-group>
 </template>
 <script>
   const cityOptions = ['上海', '北京', '广州', '深圳'];
@@ -126,12 +126,12 @@
 
 ```html
 <template>
-  <gj-checkbox-group 
+  <g-checkbox-group 
     v-model="checkedCities"
     :min="1"
     :max="2">
-    <gj-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</gj-checkbox>
-  </gj-checkbox-group>
+    <g-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</g-checkbox>
+  </g-checkbox-group>
 </template>
 <script>
   const cityOptions = ['上海', '北京', '广州', '深圳'];
@@ -156,24 +156,24 @@
 ```html
 <template>
   <div>
-    <gj-checkbox-group v-model="checkboxGroup1">
-      <gj-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</gj-checkbox-button>
-    </gj-checkbox-group>
+    <g-checkbox-group v-model="checkboxGroup1">
+      <g-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</g-checkbox-button>
+    </g-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <gj-checkbox-group v-model="checkboxGroup2" size="medium">
-      <gj-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</gj-checkbox-button>
-    </gj-checkbox-group>
+    <g-checkbox-group v-model="checkboxGroup2" size="medium">
+      <g-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</g-checkbox-button>
+    </g-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <gj-checkbox-group v-model="checkboxGroup3" size="small">
-      <gj-checkbox-button v-for="city in cities" :label="city" :disabled="city === '北京'" :key="city">{{city}}</gj-checkbox-button>
-    </gj-checkbox-group>
+    <g-checkbox-group v-model="checkboxGroup3" size="small">
+      <g-checkbox-button v-for="city in cities" :label="city" :disabled="city === '北京'" :key="city">{{city}}</g-checkbox-button>
+    </g-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <gj-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
-      <gj-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</gj-checkbox-button>
-    </gj-checkbox-group>
+    <g-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
+      <g-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</g-checkbox-button>
+    </g-checkbox-group>
   </div>
 </template>
 <script>
@@ -199,24 +199,24 @@
 ```html
 <template>
   <div>
-    <gj-checkbox v-model="checked1" label="备选项1" border></gj-checkbox>
-    <gj-checkbox v-model="checked2" label="备选项2" border></gj-checkbox>
+    <g-checkbox v-model="checked1" label="备选项1" border></g-checkbox>
+    <g-checkbox v-model="checked2" label="备选项2" border></g-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <gj-checkbox v-model="checked3" label="备选项1" border size="medium"></gj-checkbox>
-    <gj-checkbox v-model="checked4" label="备选项2" border size="medium"></gj-checkbox>
+    <g-checkbox v-model="checked3" label="备选项1" border size="medium"></g-checkbox>
+    <g-checkbox v-model="checked4" label="备选项2" border size="medium"></g-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <gj-checkbox-group v-model="checkboxGroup1" size="small">
-      <gj-checkbox label="备选项1" border></gj-checkbox>
-      <gj-checkbox label="备选项2" border disabled></gj-checkbox>
-    </gj-checkbox-group>
+    <g-checkbox-group v-model="checkboxGroup1" size="small">
+      <g-checkbox label="备选项1" border></g-checkbox>
+      <g-checkbox label="备选项2" border disabled></g-checkbox>
+    </g-checkbox-group>
   </div>
   <div style="margin-top: 20px">
-    <gj-checkbox-group v-model="checkboxGroup2" size="mini" disabled>
-      <gj-checkbox label="备选项1" border></gj-checkbox>
-      <gj-checkbox label="备选项2" border></gj-checkbox>
-    </gj-checkbox-group>
+    <g-checkbox-group v-model="checkboxGroup2" size="mini" disabled>
+      <g-checkbox label="备选项1" border></g-checkbox>
+      <g-checkbox label="备选项2" border></g-checkbox>
+    </g-checkbox-group>
   </div>
 </template>
 

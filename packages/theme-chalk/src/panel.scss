@@ -1,0 +1,340 @@
+@import "mixins/mixins";
+@import "common/var";
+
+$header-height: 32px;
+$header-tool-width: 220px;
+
+.g-panel {
+  height: 100%;
+}
+
+.g-panel-box {
+  position: relative;
+  height: 100%;
+  // background-color: $dark-bg;
+  // padding: 4px;
+  // font-size: 1rem;
+  transition: background .3s, font-size .3s;
+
+  //[class^="icon-"],
+  //[class*=" icon-"] {
+  //  padding: 4px 5px;
+  //  color: $gray;
+  //
+  //  &.active,
+  //  &:hover {
+  //    color: #fff;
+  //  }
+  //}
+}
+
+.g-tool {
+  // background-color: $dark-bg;
+  padding: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    padding: 4px 5px;
+    // color: $gray;
+
+    &.active,
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.g-panel-box-abs {
+  position: relative;
+}
+
+.g-panel-tool-abs {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.g-panel-tool {
+  position: absolute;
+  z-index: 1200;
+  padding: 6px;
+  cursor: pointer;
+  // color: $gray;
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    padding: 4px 5px;
+    // color: $gray;
+
+    &.active,
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  // &:hover {
+  //   color: #fff;
+  // }
+}
+
+.g-panel-tool-fixed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.g-panel-add {
+  top: 0px;
+  left: 200px;
+}
+
+
+.g-panel-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  min-height: $header-height;
+  padding: 5px $header-tool-width 5px 10px;
+  font-size: 0.875rem;
+  // color: $card-color;
+  // background-color: $dark;
+  border-bottom: 1px solid $--border-color-base;
+
+  .card-title {
+    display: block;
+    // @include text-truncate();
+  }
+}
+
+.g-panel-header-tool {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  white-space: nowrap;
+  text-align: right;
+
+  >div,
+  >.g-panel-tool-item {
+    display: inline-block;
+    padding: .25rem;
+  }
+
+  .el-dropdown {
+    font-size: 0.875rem;
+    // color: $card-color;
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.g-tool-reload {
+  display: inline-block;
+
+  &.active {
+    animation: animal 1s infinite linear;
+  }
+}
+
+@keyframes animal {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.g-panel-wrapper {
+  height: 100%;
+}
+
+.g-panel-wrapper-full {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $--index-panel;
+  text-align: center;
+  vertical-align: middle;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+  }
+}
+
+.g-panel-full {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 90%;
+  max-height: 90%;
+  z-index: $--index-panel;
+  background-color: $--panel-background-color;
+  border: 2px solid $--border-color-base;
+  border-radius: 4px;
+  overflow: auto;
+  text-align: left;
+  // transition: all .3s;
+  // font-size: 1.125rem !important;
+  // transform: scale(1.5);
+  // .el-table .cell {
+  //   font-size: 0.875rem !important;
+  // }
+
+  .panel-tool-search {
+    &.active {
+      .el-cascader {
+        width: 200px;
+      }
+    }
+  }
+}
+
+.g-panel-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $--index-panel;
+  background-color: rgba(38, 38, 43, 0.8);
+}
+
+.g-panel-body {
+  height: 100%;
+  // padding-top: $header-height;
+}
+
+.g-panel-content {
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  right: 0;
+  padding: 0 8px 0 8px;
+  // overflow: auto;
+}
+
+.g-panel-full {
+  .g-panel-content {
+    padding-top: 8px;
+  }
+
+  .g-panel-content-wrap {
+    max-height: 90vh;
+  }
+
+  .g-panel-header-tool {
+    &.hasTabs {
+      border-bottom: 0;
+    }
+  }
+}
+
+// 静态panel
+.g-panel-static {
+  height: auto;
+
+  .g-panel-box,
+  .g-panel-body,
+  // .g-panel-content,
+  .g-panel-wrapper {
+    height: auto;
+  }
+
+  .g-panel-body {
+    position: relative;
+    // position: static;
+    // margin-top: $header-height;
+  }
+
+  .g-panel-content {
+    position: static;
+    // margin-top: $header-height + 6px;
+  }
+
+  .g-panel-header {
+    position: static;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    // color: $card-color;
+    border-bottom: none;
+    background-color: transparent;
+    // background-color: $dark;
+  }
+
+  .g-panel-header-bg {
+    background-color: $--panel-header-background-color;
+  }
+
+  .g-panel-full {
+    max-height: none;
+
+    .g-panel-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+      padding: 5px 10px;
+      font-size: 0.875rem;
+      background-color: $--panel-background-color;
+      border-bottom: none;
+    }
+
+    .g-panel-body {
+      margin-top: 0;
+    }
+
+    .g-panel-content-wrap {
+      margin-top: $header-height;
+    }
+
+    .g-panel-content {
+      position: static;
+    }
+  }
+
+}
+
+.g-panel-abs {
+  .g-panel-header {
+    position: absolute;
+    right: 0;
+    left: auto;
+    width: auto;
+    z-index: 10;
+    min-width: 60px;
+    top: 4px;
+    padding-left: 0;
+  }
+
+  .g-panel-header-tool {
+    height: 36px;
+    min-width: 60px;
+  }
+
+  .g-panel-body {
+    padding-top: 0;
+  }
+
+  .g-panel-content {
+    position: static;
+    margin-top: 0;
+  }
+}

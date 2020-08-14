@@ -35,16 +35,20 @@
     padding-bottom: 10px;
   }
 
-  @include e(headerbtn) {
+  @include e(headertool) {
     position: absolute;
     top: $--dialog-padding-primary;
     right: $--dialog-padding-primary;
+  }
+
+  @include e(headerbtn) {
     padding: 0;
     background: transparent;
     border: none;
     outline: none;
     cursor: pointer;
     font-size: $--message-close-size;
+    margin-left: 10px;
 
     .el-dialog__close {
       color: $--color-info;

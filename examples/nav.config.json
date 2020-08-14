@@ -287,8 +287,29 @@
             {
               "path": "/drawer",
               "title": "Drawer 抽屉"
+            },
+            {
+              "path": "/panel",
+              "title": "Panel 嵌板"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "页面",
+      "children": [
+        {
+          "path": "/page",
+          "name": "Page 页面"
+        },
+        {
+          "path": "/pageTable",
+          "name": "PageTable 表格页面"
+        },
+        {
+          "path": "/pageForm",
+          "name": "PageForm 表单页面"
         }
       ]
     }

@@ -8,7 +8,7 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 ```html
 <template>
   <div>
-    <gj-button @click="show = !show">Click Me</gj-button>
+    <g-button @click="show = !show">Click Me</g-button>
 
     <div style="display: flex; margin-top: 20px; height: 100px;">
       <transition name="el-fade-in-linear">
@@ -52,7 +52,7 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 ```html
 <template>
   <div>
-    <gj-button @click="show2 = !show2">Click Me</gj-button>
+    <g-button @click="show2 = !show2">Click Me</g-button>
 
     <div style="display: flex; margin-top: 20px; height: 100px;">
       <transition name="el-zoom-in-center">
@@ -104,15 +104,15 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 ```html
 <template>
   <div>
-    <gj-button @click="show3 = !show3">Click Me</gj-button>
+    <g-button @click="show3 = !show3">Click Me</g-button>
 
     <div style="margin-top: 20px; height: 200px;">
-      <gj-collapse-transition>
+      <g-collapse-transition>
         <div v-show="show3">
           <div class="transition-box">el-collapse-transition</div>
           <div class="transition-box">el-collapse-transition</div>
         </div>
-      </gj-collapse-transition>
+      </g-collapse-transition>
     </div>
   </div>
 </template>

@@ -11,20 +11,20 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 activity，�
 <div class="block">
   <div class="radio">
     排序：
-    <gj-radio-group v-model="reverse">
-      <gj-radio :label="true">倒序</gj-radio>
-      <gj-radio :label="false">正序</gj-radio>
-    </gj-radio-group>
+    <g-radio-group v-model="reverse">
+      <g-radio :label="true">倒序</g-radio>
+      <g-radio :label="false">正序</g-radio>
+    </g-radio-group>
   </div>
 
-  <gj-timeline :reverse="reverse">
-    <gj-timeline-item
+  <g-timeline :reverse="reverse">
+    <g-timeline-item
       v-for="(activity, index) in activities"
       :key="index"
       :timestamp="activity.timestamp">
       {{activity.content}}
-    </gj-timeline-item>
-  </gj-timeline>
+    </g-timeline-item>
+  </g-timeline>
 </div>
 
 <script>
@@ -56,8 +56,8 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 activity，�
 :::demo
 ```html
 <div class="block">
-  <gj-timeline>
-    <gj-timeline-item
+  <g-timeline>
+    <g-timeline-item
       v-for="(activity, index) in activities"
       :key="index"
       :icon="activity.icon"
@@ -66,8 +66,8 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 activity，�
       :size="activity.size"
       :timestamp="activity.timestamp">
       {{activity.content}}
-    </gj-timeline-item>
-  </gj-timeline>
+    </g-timeline-item>
+  </g-timeline>
 </div>
 
 <script>
@@ -106,26 +106,26 @@ Timeline 可拆分成多个按照时间戳正序或倒序排列的 activity，�
 :::demo
 ```html
 <div class="block">
-  <gj-timeline>
-    <gj-timeline-item timestamp="2018/4/12" placement="top">
-      <gj-card>
+  <g-timeline>
+    <g-timeline-item timestamp="2018/4/12" placement="top">
+      <g-card>
         <h4>更新 Github 模板</h4>
         <p>王小虎 提交于 2018/4/12 20:46</p>
-      </gj-card>
-    </gj-timeline-item>
-    <gj-timeline-item timestamp="2018/4/3" placement="top">
-      <gj-card>
+      </g-card>
+    </g-timeline-item>
+    <g-timeline-item timestamp="2018/4/3" placement="top">
+      <g-card>
         <h4>更新 Github 模板</h4>
         <p>王小虎 提交于 2018/4/3 20:46</p>
-      </gj-card>
-    </gj-timeline-item>
-    <gj-timeline-item timestamp="2018/4/2" placement="top">
-      <gj-card>
+      </g-card>
+    </g-timeline-item>
+    <g-timeline-item timestamp="2018/4/2" placement="top">
+      <g-card>
         <h4>更新 Github 模板</h4>
         <p>王小虎 提交于 2018/4/2 20:46</p>
-      </gj-card>
-    </gj-timeline-item>
-  </gj-timeline>
+      </g-card>
+    </g-timeline-item>
+  </g-timeline>
 </div>
 ```
 :::

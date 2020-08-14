@@ -11,19 +11,19 @@
 <template>
   <div class="block">
     <span class="demonstration">默认 Hover 指示器触发</span>
-    <gj-carousel height="150px">
-      <gj-carousel-item v-for="item in 4" :key="item">
+    <g-carousel height="150px">
+      <g-carousel-item v-for="item in 4" :key="item">
         <h3 class="small">{{ item }}</h3>
-      </gj-carousel-item>
-    </gj-carousel>
+      </g-carousel-item>
+    </g-carousel>
   </div>
   <div class="block">
     <span class="demonstration">Click 指示器触发</span>
-    <gj-carousel trigger="click" height="150px">
-      <gj-carousel-item v-for="item in 4" :key="item">
+    <g-carousel trigger="click" height="150px">
+      <g-carousel-item v-for="item in 4" :key="item">
         <h3 class="small">{{ item }}</h3>
-      </gj-carousel-item>
-    </gj-carousel>
+      </g-carousel-item>
+    </g-carousel>
   </div>
 </template>
 
@@ -54,11 +54,11 @@
 :::demo `indicator-position`属性定义了指示器的位置。默认情况下，它会显示在走马灯内部，设置为`outside`则会显示在外部；设置为`none`则不会显示指示器。
 ```html
 <template>
-  <gj-carousel indicator-position="outside">
-    <gj-carousel-item v-for="item in 4" :key="item">
+  <g-carousel indicator-position="outside">
+    <g-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
-    </gj-carousel-item>
-  </gj-carousel>
+    </g-carousel-item>
+  </g-carousel>
 </template>
 
 <style>
@@ -87,11 +87,11 @@
 :::demo `arrow`属性定义了切换箭头的显示时机。默认情况下，切换箭头只有在鼠标 hover 到走马灯上时才会显示；若将`arrow`设置为`always`，则会一直显示；设置为`never`，则会一直隐藏。
 ```html
 <template>
-  <gj-carousel :interval="5000" arrow="always">
-    <gj-carousel-item v-for="item in 4" :key="item">
+  <g-carousel :interval="5000" arrow="always">
+    <g-carousel-item v-for="item in 4" :key="item">
       <h3>{{ item }}</h3>
-    </gj-carousel-item>
-  </gj-carousel>
+    </g-carousel-item>
+  </g-carousel>
 </template>
 
 <style>
@@ -120,11 +120,11 @@
 :::demo 将`type`属性设置为`card`即可启用卡片模式。从交互上来说，卡片模式和一般模式的最大区别在于，可以通过直接点击两侧的幻灯片进行切换。
 ```html
 <template>
-  <gj-carousel :interval="4000" type="card" height="200px">
-    <gj-carousel-item v-for="item in 6" :key="item">
+  <g-carousel :interval="4000" type="card" height="200px">
+    <g-carousel-item v-for="item in 6" :key="item">
       <h3 class="medium">{{ item }}</h3>
-    </gj-carousel-item>
-  </gj-carousel>
+    </g-carousel-item>
+  </g-carousel>
 </template>
 
 <style>
@@ -152,11 +152,11 @@
 :::demo
 ```html
 <template>
-  <gj-carousel height="200px" direction="vertical" :autoplay="false">
-    <gj-carousel-item v-for="item in 3" :key="item">
+  <g-carousel height="200px" direction="vertical" :autoplay="false">
+    <g-carousel-item v-for="item in 3" :key="item">
       <h3 class="medium">{{ item }}</h3>
-    </gj-carousel-item>
-  </gj-carousel>
+    </g-carousel-item>
+  </g-carousel>
 </template>
 
 <style>

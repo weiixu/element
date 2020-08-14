@@ -89,34 +89,34 @@
 
 我们提供了以下几种圆角样式，以供选择。
 
-<gj-row :gutter="12" class="demo-radius">
-  <gj-col :span="6" :xs="{span: 12}">
+<g-row :gutter="12" class="demo-radius">
+  <g-col :span="6" :xs="{span: 12}">
     <div class="title">无圆角</div>
     <div class="value">border-radius: 0px</div>
     <div class="radius"></div>
-  </gj-col>
-  <gj-col :span="6" :xs="{span: 12}">
+  </g-col>
+  <g-col :span="6" :xs="{span: 12}">
     <div class="title">小圆角</div>
     <div class="value">border-radius: {{borderRadiusSmall}}</div>
     <div 
       class="radius" 
       :style="{ borderRadius: borderRadiusSmall }"
     ></div>
-  </gj-col>
-  <gj-col :span="6" :xs="{span: 12}">
+  </g-col>
+  <g-col :span="6" :xs="{span: 12}">
     <div class="title">大圆角</div>
     <div class="value">border-radius: {{borderRadiusBase}}</div>
     <div 
       class="radius"
       :style="{ borderRadius: borderRadiusBase }"
     ></div>
-  </gj-col>
-  <gj-col :span="6" :xs="{span: 12}">
+  </g-col>
+  <g-col :span="6" :xs="{span: 12}">
     <div class="title">圆形圆角</div>
     <div class="value">border-radius: 30px</div>
     <div class="radius radius-30"></div>
-  </gj-col>
-</gj-row>
+  </g-col>
+</g-row>
 
 ### 投影
 

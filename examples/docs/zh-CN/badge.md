@@ -8,34 +8,34 @@
 :::demo 定义`value`属性，它接受`Number`或者`String`。
 
 ```html
-<gj-badge :value="12" class="item">
-  <gj-button size="small">评论</gj-button>
-</gj-badge>
-<gj-badge :value="3" class="item">
-  <gj-button size="small">回复</gj-button>
-</gj-badge>
-<gj-badge :value="1" class="item" type="primary">
-  <gj-button size="small">评论</gj-button>
-</gj-badge>
-<gj-badge :value="2" class="item" type="warning">
-  <gj-button size="small">回复</gj-button>
-</gj-badge>
+<g-badge :value="12" class="item">
+  <g-button size="small">评论</g-button>
+</g-badge>
+<g-badge :value="3" class="item">
+  <g-button size="small">回复</g-button>
+</g-badge>
+<g-badge :value="1" class="item" type="primary">
+  <g-button size="small">评论</g-button>
+</g-badge>
+<g-badge :value="2" class="item" type="warning">
+  <g-button size="small">回复</g-button>
+</g-badge>
 
-<gj-dropdown trigger="click">
+<g-dropdown trigger="click">
   <span class="el-dropdown-link">
     点我查看<i class="el-icon-caret-bottom el-icon--right"></i>
   </span>
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item class="clearfix">
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item class="clearfix">
       评论
-      <gj-badge class="mark" :value="12" />
-    </gj-dropdown-item>
-    <gj-dropdown-item class="clearfix">
+      <g-badge class="mark" :value="12" />
+    </g-dropdown-item>
+    <g-dropdown-item class="clearfix">
       回复
-      <gj-badge class="mark" :value="3" />
-    </gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+      <g-badge class="mark" :value="3" />
+    </g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 
 <style>
 .item {
@@ -52,12 +52,12 @@
 :::demo 由`max`属性定义，它接受一个`Number`，需要注意的是，只有当`value`为`Number`时，它才会生效。
 
 ```html
-<gj-badge :value="200" :max="99" class="item">
-  <gj-button size="small">评论</gj-button>
-</gj-badge>
-<gj-badge :value="100" :max="10" class="item">
-  <gj-button size="small">回复</gj-button>
-</gj-badge>
+<g-badge :value="200" :max="99" class="item">
+  <g-button size="small">评论</g-button>
+</g-badge>
+<g-badge :value="100" :max="10" class="item">
+  <g-button size="small">回复</g-button>
+</g-badge>
 
 <style>
 .item {
@@ -74,12 +74,12 @@
 :::demo 定义`value`为`String`类型是时可以用于显示自定义文本。
 
 ```html
-<gj-badge value="new" class="item">
-  <gj-button size="small">评论</gj-button>
-</gj-badge>
-<gj-badge value="hot" class="item">
-  <gj-button size="small">回复</gj-button>
-</gj-badge>
+<g-badge value="new" class="item">
+  <g-button size="small">评论</g-button>
+</g-badge>
+<g-badge value="hot" class="item">
+  <g-button size="small">回复</g-button>
+</g-badge>
 
 <style>
 .item {
@@ -96,10 +96,10 @@
 :::demo 除了数字外，设置`is-dot`属性，它接受一个`Boolean`。
 
 ```html
-<gj-badge is-dot class="item">数据查询</gj-badge>
-<gj-badge is-dot class="item">
-  <gj-button class="share-button" icon="el-icon-share" type="primary"></gj-button>
-</gj-badge>
+<g-badge is-dot class="item">数据查询</g-badge>
+<g-badge is-dot class="item">
+  <g-button class="share-button" icon="el-icon-share" type="primary"></g-button>
+</g-badge>
 
 <style>
 .item {

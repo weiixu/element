@@ -8,15 +8,15 @@
 
 :::demo Card 组件包括`header`和`body`部分，`header`部分需要有显式具名 slot 分发，同时也是可选的。
 ```html
-<gj-card class="box-card">
+<g-card class="box-card">
   <div slot="header" class="clearfix">
     <span>卡片名称</span>
-    <gj-button style="float: right; padding: 3px 0" type="text">操作按钮</gj-button>
+    <g-button style="float: right; padding: 3px 0" type="text">操作按钮</g-button>
   </div>
   <div v-for="o in 4" :key="o" class="text item">
     {{'列表内容 ' + o }}
   </div>
-</gj-card>
+</g-card>
 
 <style>
   .text {
@@ -49,11 +49,11 @@
 
 :::demo
 ```html
-<gj-card class="box-card">
+<g-card class="box-card">
   <div v-for="o in 4" :key="o" class="text item">
     {{'列表内容 ' + o }}
   </div>
-</gj-card>
+</g-card>
 
 <style>
   .text {
@@ -77,20 +77,20 @@
 
 :::demo 配置`body-style`属性来自定义`body`部分的`style`，我们还使用了布局组件。
 ```html
-<gj-row>
-  <gj-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
-    <gj-card :body-style="{ padding: '0px' }">
+<g-row>
+  <g-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
+    <g-card :body-style="{ padding: '0px' }">
       <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
       <div style="padding: 14px;">
         <span>好吃的汉堡</span>
         <div class="bottom clearfix">
           <time class="time">{{ currentDate }}</time>
-          <gj-button type="text" class="button">操作按钮</gj-button>
+          <g-button type="text" class="button">操作按钮</g-button>
         </div>
       </div>
-    </gj-card>
-  </gj-col>
-</gj-row>
+    </g-card>
+  </g-col>
+</g-row>
 
 <style>
   .time {
@@ -142,23 +142,23 @@ export default {
 
 :::demo 通过`shadow`属性设置卡片阴影出现的时机：`always`、`hover`或`never`。
 ```html
-<gj-row :gutter="12">
-  <gj-col :span="8">
-    <gj-card shadow="always">
+<g-row :gutter="12">
+  <g-col :span="8">
+    <g-card shadow="always">
       总是显示
-    </gj-card>
-  </gj-col>
-  <gj-col :span="8">
-    <gj-card shadow="hover">
+    </g-card>
+  </g-col>
+  <g-col :span="8">
+    <g-card shadow="hover">
       鼠标悬浮时显示
-    </gj-card>
-  </gj-col>
-  <gj-col :span="8">
-    <gj-card shadow="never">
+    </g-card>
+  </g-col>
+  <g-col :span="8">
+    <g-card shadow="never">
       从不显示
-    </gj-card>
-  </gj-col>
-</gj-row>
+    </g-card>
+  </g-col>
+</g-row>
 ```
 :::
 

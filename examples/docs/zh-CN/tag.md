@@ -7,11 +7,11 @@
 :::demo 由`type`属性来选择tag的类型，也可以通过`color`属性来自定义背景色。
 
 ```html
-<gj-tag>标签一</gj-tag>
-<gj-tag type="success">标签二</gj-tag>
-<gj-tag type="info">标签三</gj-tag>
-<gj-tag type="warning">标签四</gj-tag>
-<gj-tag type="danger">标签五</gj-tag>
+<g-tag>标签一</g-tag>
+<g-tag type="success">标签二</g-tag>
+<g-tag type="info">标签三</g-tag>
+<g-tag type="warning">标签四</g-tag>
+<g-tag type="danger">标签五</g-tag>
 ```
 :::
 
@@ -20,13 +20,13 @@
 :::demo 设置`closable`属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，如果不想使用，可以设置`disable-transitions`属性，它接受一个`Boolean`，true 为关闭。
 
 ```html
-<gj-tag
+<g-tag
   v-for="tag in tags"
   :key="tag.name"
   closable
   :type="tag.type">
   {{tag.name}}
-</gj-tag>
+</g-tag>
 
 <script>
   export default {
@@ -52,15 +52,15 @@
 
 :::demo
 ```html
-<gj-tag
+<g-tag
   :key="tag"
   v-for="tag in dynamicTags"
   closable
   :disable-transitions="false"
   @close="handleClose(tag)">
   {{tag}}
-</gj-tag>
-<gj-input
+</g-tag>
+<g-input
   class="input-new-tag"
   v-if="inputVisible"
   v-model="inputValue"
@@ -69,8 +69,8 @@
   @keyup.enter.native="handleInputConfirm"
   @blur="handleInputConfirm"
 >
-</gj-input>
-<gj-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</gj-button>
+</g-input>
+<g-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</g-button>
 
 <style>
   .el-tag + .el-tag {
@@ -132,10 +132,10 @@ Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下�
 :::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
-<gj-tag closable>默认标签</gj-tag>
-<gj-tag size="medium" closable>中等标签</gj-tag>
-<gj-tag size="small" closable>小型标签</gj-tag>
-<gj-tag size="mini" closable>超小标签</gj-tag>
+<g-tag closable>默认标签</g-tag>
+<g-tag size="medium" closable>中等标签</g-tag>
+<g-tag size="small" closable>小型标签</g-tag>
+<g-tag size="mini" closable>超小标签</g-tag>
 ```
 :::
 
@@ -147,23 +147,23 @@ Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
 ```html
 <div class="tag-group">
   <span class="tag-group__title">Dark</span>
-  <gj-tag
+  <g-tag
     v-for="item in items"
     :key="item.label"
     :type="item.type"
     effect="dark">
     {{ item.label }}
-  </gj-tag>
+  </g-tag>
 </div>
 <div class="tag-group">
   <span class="tag-group__title">Plain</span>
-  <gj-tag
+  <g-tag
     v-for="item in items"
     :key="item.label"
     :type="item.type"
     effect="plain">
     {{ item.label }}
-  </gj-tag>
+  </g-tag>
 </div>
 
 <script>

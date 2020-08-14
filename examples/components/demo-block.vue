@@ -26,18 +26,18 @@
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
       </transition>
-      <gj-tooltip effect="dark" :content="langConfig['tooltip-text']" placement="right">
+      <g-tooltip effect="dark" :content="langConfig['tooltip-text']" placement="right">
         <transition name="text-slide">
-          <gj-button
+          <g-button
             v-show="hovering || isExpanded"
             size="small"
             type="text"
             class="control-button"
             @click.stop="goCodepen">
             {{ langConfig['button-text'] }}
-          </gj-button>
+          </g-button>
         </transition>
-      </gj-tooltip>
+      </g-tooltip>
     </div>
   </div>
 </template>
@@ -206,10 +206,10 @@
         // since 2.6.2 use code rather than jsfiddle https://blog.codepen.io/documentation/api/prefill/
         const { script, html, style } = this.codepen;
         const resourcesTpl = '<scr' + 'ipt src="//unpkg.com/vue/dist/vue.js"></scr' + 'ipt>' +
-        '\n<scr' + `ipt src="//unpkg.com/element-gj@${ version }/lib/index.js"></scr` + 'ipt>';
+        '\n<scr' + `ipt src="//unpkg.com/element-gui@${ version }/lib/index.js"></scr` + 'ipt>';
         let jsTpl = (script || '').replace(/export default/, 'var Main =').trim();
         let htmlTpl = `${resourcesTpl}\n<div id="app">\n${html.trim()}\n</div>`;
-        let cssTpl = `@import url("//unpkg.com/element-gj@${ version }/lib/theme-chalk/index.css");\n${(style || '').trim()}\n`;
+        let cssTpl = `@import url("//unpkg.com/element-gui@${ version }/lib/theme-chalk/index.css");\n${(style || '').trim()}\n`;
         jsTpl = jsTpl
           ? jsTpl + '\nvar Ctor = Vue.extend(Main)\nnew Ctor().$mount(\'#app\')'
           : 'new Vue().$mount(\'#app\')';

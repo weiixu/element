@@ -1,9 +1,9 @@
 <template>
   <section class="config" :key="displayName">
     <div class="config-label">
-      <gj-tooltip :content="displayName" placement="top">
+      <g-tooltip :content="displayName" placement="top">
         <span>{{displayKeyName}}</span>
-      </gj-tooltip>
+      </g-tooltip>
     </div>
     <div class="config-content">
       <theme-input 

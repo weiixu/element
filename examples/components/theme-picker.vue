@@ -1,8 +1,8 @@
 <template>
-  <gj-color-picker
+  <g-color-picker
     class="theme-picker"
     popper-class="theme-picker-dropdown"
-    v-model="theme"></gj-color-picker>
+    v-model="theme"></g-color-picker>
 </template>
 
 <style lang="scss">

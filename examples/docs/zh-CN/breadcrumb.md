@@ -8,12 +8,12 @@
 :::demo 在`el-breadcrumb`中使用`el-breadcrumb-item`标签表示从首页开始的每一级。Element 提供了一个`separator`属性，在`el-breadcrumb`标签中设置它来决定分隔符，它只能是字符串，默认为斜杠`/`。
 
 ```html
-<gj-breadcrumb separator="/">
-  <gj-breadcrumb-item :to="{ path: '/' }">首页</gj-breadcrumb-item>
-  <gj-breadcrumb-item><a href="/">活动管理</a></gj-breadcrumb-item>
-  <gj-breadcrumb-item>活动列表</gj-breadcrumb-item>
-  <gj-breadcrumb-item>活动详情</gj-breadcrumb-item>
-</gj-breadcrumb>
+<g-breadcrumb separator="/">
+  <g-breadcrumb-item :to="{ path: '/' }">首页</g-breadcrumb-item>
+  <g-breadcrumb-item><a href="/">活动管理</a></g-breadcrumb-item>
+  <g-breadcrumb-item>活动列表</g-breadcrumb-item>
+  <g-breadcrumb-item>活动详情</g-breadcrumb-item>
+</g-breadcrumb>
 ```
 :::
 
@@ -22,12 +22,12 @@
 :::demo 通过设置 `separator-class` 可使用相应的 `iconfont` 作为分隔符，注意这将使 `separator` 设置失效
 
 ```html
-<gj-breadcrumb separator-class="el-icon-arrow-right">
-  <gj-breadcrumb-item :to="{ path: '/' }">首页</gj-breadcrumb-item>
-  <gj-breadcrumb-item>活动管理</gj-breadcrumb-item>
-  <gj-breadcrumb-item>活动列表</gj-breadcrumb-item>
-  <gj-breadcrumb-item>活动详情</gj-breadcrumb-item>
-</gj-breadcrumb>
+<g-breadcrumb separator-class="el-icon-arrow-right">
+  <g-breadcrumb-item :to="{ path: '/' }">首页</g-breadcrumb-item>
+  <g-breadcrumb-item>活动管理</g-breadcrumb-item>
+  <g-breadcrumb-item>活动列表</g-breadcrumb-item>
+  <g-breadcrumb-item>活动详情</g-breadcrumb-item>
+</g-breadcrumb>
 ```
 :::
 

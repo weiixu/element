@@ -135,6 +135,7 @@ $--size-base: 14px !default;
 $--index-normal: 1 !default;
 $--index-top: 1000 !default;
 $--index-popper: 2000 !default;
+$--index-panel: 2000 !default;
 
 /* Disable base
 -------------------------- */
@@ -752,6 +753,16 @@ $--card-border-color: $--border-color-lighter !default;
 $--card-border-radius: 4px !default;
 /// padding||Spacing|3
 $--card-padding: 20px !default;
+
+/* Panel
+--------------------------*/
+/// color||Color|0
+$--panel-border-color: $--border-color-lighter !default;
+$--panel-border-radius: 4px !default;
+$--panel-header-background-color: $--background-color-base !default;
+$--panel-background-color: $--background-color-base !default;
+/// padding||Spacing|3
+$--panel-padding: 20px !default;
 
 /* Slider
 --------------------------*/

@@ -10,8 +10,8 @@
 
 ```html
 <template>
-  <gj-radio v-model="radio" label="1">备选项</gj-radio>
-  <gj-radio v-model="radio" label="2">备选项</gj-radio>
+  <g-radio v-model="radio" label="1">备选项</g-radio>
+  <g-radio v-model="radio" label="2">备选项</g-radio>
 </template>
 
 <script>
@@ -33,8 +33,8 @@
 :::demo 只要在`el-radio`元素中设置`disabled`属性即可，它接受一个`Boolean`，`true`为禁用。
 ```html
 <template>
-  <gj-radio disabled v-model="radio" label="禁用">备选项</gj-radio>
-  <gj-radio disabled v-model="radio" label="选中且禁用">备选项</gj-radio>
+  <g-radio disabled v-model="radio" label="禁用">备选项</g-radio>
+  <g-radio disabled v-model="radio" label="选中且禁用">备选项</g-radio>
 </template>
 
 <script>
@@ -57,11 +57,11 @@
 
 ```html
 <template>
-  <gj-radio-group v-model="radio">
-    <gj-radio :label="3">备选项</gj-radio>
-    <gj-radio :label="6">备选项</gj-radio>
-    <gj-radio :label="9">备选项</gj-radio>
-  </gj-radio-group>
+  <g-radio-group v-model="radio">
+    <g-radio :label="3">备选项</g-radio>
+    <g-radio :label="6">备选项</g-radio>
+    <g-radio :label="9">备选项</g-radio>
+  </g-radio-group>
 </template>
 
 <script>
@@ -84,36 +84,36 @@
 ```html
 <template>
   <div>
-    <gj-radio-group v-model="radio1">
-      <gj-radio-button label="上海"></gj-radio-button>
-      <gj-radio-button label="北京"></gj-radio-button>
-      <gj-radio-button label="广州"></gj-radio-button>
-      <gj-radio-button label="深圳"></gj-radio-button>
-    </gj-radio-group>
+    <g-radio-group v-model="radio1">
+      <g-radio-button label="上海"></g-radio-button>
+      <g-radio-button label="北京"></g-radio-button>
+      <g-radio-button label="广州"></g-radio-button>
+      <g-radio-button label="深圳"></g-radio-button>
+    </g-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <gj-radio-group v-model="radio2" size="medium">
-      <gj-radio-button label="上海" ></gj-radio-button>
-      <gj-radio-button label="北京"></gj-radio-button>
-      <gj-radio-button label="广州"></gj-radio-button>
-      <gj-radio-button label="深圳"></gj-radio-button>
-    </gj-radio-group>
+    <g-radio-group v-model="radio2" size="medium">
+      <g-radio-button label="上海" ></g-radio-button>
+      <g-radio-button label="北京"></g-radio-button>
+      <g-radio-button label="广州"></g-radio-button>
+      <g-radio-button label="深圳"></g-radio-button>
+    </g-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <gj-radio-group v-model="radio3" size="small">
-      <gj-radio-button label="上海"></gj-radio-button>
-      <gj-radio-button label="北京" disabled ></gj-radio-button>
-      <gj-radio-button label="广州"></gj-radio-button>
-      <gj-radio-button label="深圳"></gj-radio-button>
-    </gj-radio-group>
+    <g-radio-group v-model="radio3" size="small">
+      <g-radio-button label="上海"></g-radio-button>
+      <g-radio-button label="北京" disabled ></g-radio-button>
+      <g-radio-button label="广州"></g-radio-button>
+      <g-radio-button label="深圳"></g-radio-button>
+    </g-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <gj-radio-group v-model="radio4" disabled size="mini">
-      <gj-radio-button label="上海"></gj-radio-button>
-      <gj-radio-button label="北京"></gj-radio-button>
-      <gj-radio-button label="广州"></gj-radio-button>
-      <gj-radio-button label="深圳"></gj-radio-button>
-    </gj-radio-group>
+    <g-radio-group v-model="radio4" disabled size="mini">
+      <g-radio-button label="上海"></g-radio-button>
+      <g-radio-button label="北京"></g-radio-button>
+      <g-radio-button label="广州"></g-radio-button>
+      <g-radio-button label="深圳"></g-radio-button>
+    </g-radio-group>
   </div>
 </template>
 
@@ -138,24 +138,24 @@
 ```html
 <template>
   <div>
-    <gj-radio v-model="radio1" label="1" border>备选项1</gj-radio>
-    <gj-radio v-model="radio1" label="2" border>备选项2</gj-radio>
+    <g-radio v-model="radio1" label="1" border>备选项1</g-radio>
+    <g-radio v-model="radio1" label="2" border>备选项2</g-radio>
   </div>
   <div style="margin-top: 20px">
-    <gj-radio v-model="radio2" label="1" border size="medium">备选项1</gj-radio>
-    <gj-radio v-model="radio2" label="2" border size="medium">备选项2</gj-radio>
+    <g-radio v-model="radio2" label="1" border size="medium">备选项1</g-radio>
+    <g-radio v-model="radio2" label="2" border size="medium">备选项2</g-radio>
   </div>
   <div style="margin-top: 20px">
-    <gj-radio-group v-model="radio3" size="small">
-      <gj-radio label="1" border>备选项1</gj-radio>
-      <gj-radio label="2" border disabled>备选项2</gj-radio>
-    </gj-radio-group>
+    <g-radio-group v-model="radio3" size="small">
+      <g-radio label="1" border>备选项1</g-radio>
+      <g-radio label="2" border disabled>备选项2</g-radio>
+    </g-radio-group>
   </div>
   <div style="margin-top: 20px">
-    <gj-radio-group v-model="radio4" size="mini" disabled>
-      <gj-radio label="1" border>备选项1</gj-radio>
-      <gj-radio label="2" border>备选项2</gj-radio>
-    </gj-radio-group>
+    <g-radio-group v-model="radio4" size="mini" disabled>
+      <g-radio label="1" border>备选项1</g-radio>
+      <g-radio label="2" border>备选项2</g-radio>
+    </g-radio-group>
   </div>
 </template>
 

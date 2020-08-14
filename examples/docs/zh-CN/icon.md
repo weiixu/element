@@ -11,7 +11,7 @@
 <i class="el-icon-edit"></i>
 <i class="el-icon-share"></i>
 <i class="el-icon-delete"></i>
-<gj-button type="primary" icon="el-icon-search">搜索</gj-button>
+<g-button type="primary" icon="el-icon-search">搜索</g-button>
 
 ```
 :::

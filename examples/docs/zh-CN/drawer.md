@@ -9,24 +9,24 @@
 :::demo 需要设置 `visible` 属性，它的**类型**是 `boolean`,当为 **true** 时显示 Drawer。Drawer 分为两个部分：`title` 和 `body`，`title` 需要具名为 **title** 的 `slot`, 也可以通过 `title` 属性来定义，默认值为空。需要注意的是, Drawer 默认是从右往左打开, 当然可以设置对应的 `direction`, 详细请参考 `direction` 用法 最后，本例还展示了 `before-close` 的用法
 
 ```html
-<gj-radio-group v-model="direction">
-  <gj-radio label="ltr">从左往右开</gj-radio>
-  <gj-radio label="rtl">从右往左开</gj-radio>
-  <gj-radio label="ttb">从上往下开</gj-radio>
-  <gj-radio label="btt">从下往上开</gj-radio>
-</gj-radio-group>
+<g-radio-group v-model="direction">
+  <g-radio label="ltr">从左往右开</g-radio>
+  <g-radio label="rtl">从右往左开</g-radio>
+  <g-radio label="ttb">从上往下开</g-radio>
+  <g-radio label="btt">从下往上开</g-radio>
+</g-radio-group>
 
-<gj-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<g-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   点我打开
-</gj-button>
+</g-button>
 
-<gj-drawer
+<g-drawer
   title="我是标题"
   :visible.sync="drawer"
   :direction="direction"
   :before-close="handleClose">
   <span>我来啦!</span>
-</gj-drawer>
+</g-drawer>
 
 <script>
   export default {
@@ -57,16 +57,16 @@
 :::demo 当遇到不需要 title 的场景时, 可以通过 `withHeader` 这个属性来关闭掉 title 的显示, 这样可以留出更大的空间给到用户, 为了用户的可访问性, 请务必设定 `title` 的值
 
 ```html
-<gj-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<g-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   点我打开
-</gj-button>
+</g-button>
 
-<gj-drawer
+<g-drawer
   title="我是标题"
   :visible.sync="drawer"
   :with-header="false">
   <span>我来啦!</span>
-</gj-drawer>
+</g-drawer>
 
 <script>
   export default {
@@ -88,21 +88,21 @@
 :::demo
 
 ```html
-<gj-button type="text" @click="table = true">打开嵌套表格的 Drawer</gj-button>
-<gj-button type="text" @click="dialog = true">打开嵌套 Form 的 Drawer</gj-button>
-<gj-drawer
+<g-button type="text" @click="table = true">打开嵌套表格的 Drawer</g-button>
+<g-button type="text" @click="dialog = true">打开嵌套 Form 的 Drawer</g-button>
+<g-drawer
   title="我嵌套了表格!"
   :visible.sync="table"
   direction="rtl"
   size="50%">
-   <gj-table :data="gridData">
-      <gj-table-column property="date" label="日期" width="150"></gj-table-column>
-      <gj-table-column property="name" label="姓名" width="200"></gj-table-column>
-      <gj-table-column property="address" label="地址"></gj-table-column>
-    </gj-table>
-</gj-drawer>
+   <g-table :data="gridData">
+      <g-table-column property="date" label="日期" width="150"></g-table-column>
+      <g-table-column property="name" label="姓名" width="200"></g-table-column>
+      <g-table-column property="address" label="地址"></g-table-column>
+    </g-table>
+</g-drawer>
 
-<gj-drawer
+<g-drawer
   title="我嵌套了 Form !"
   :before-close="handleClose"
   :visible.sync="dialog"
@@ -111,23 +111,23 @@
   ref="drawer"
   >
   <div class="demo-drawer__content">
-    <gj-form :model="form">
-      <gj-form-item label="活动名称" :label-width="formLabelWidth">
-        <gj-input v-model="form.name" autocomplete="off"></gj-input>
-      </gj-form-item>
-      <gj-form-item label="活动区域" :label-width="formLabelWidth">
-        <gj-select v-model="form.region" placeholder="请选择活动区域">
-          <gj-option label="区域一" value="shanghai"></gj-option>
-          <gj-option label="区域二" value="beijing"></gj-option>
-        </gj-select>
-      </gj-form-item>
-    </gj-form>
+    <g-form :model="form">
+      <g-form-item label="活动名称" :label-width="formLabelWidth">
+        <g-input v-model="form.name" autocomplete="off"></g-input>
+      </g-form-item>
+      <g-form-item label="活动区域" :label-width="formLabelWidth">
+        <g-select v-model="form.region" placeholder="请选择活动区域">
+          <g-option label="区域一" value="shanghai"></g-option>
+          <g-option label="区域二" value="beijing"></g-option>
+        </g-select>
+      </g-form-item>
+    </g-form>
     <div class="demo-drawer__footer">
-      <gj-button @click="cancelForm">取 消</gj-button>
-      <gj-button type="primary" @click="$refs.drawer.closeDrawer()" :loading="loading">{{ loading ? '提交中 ...' : '确 定' }}</gj-button>
+      <g-button @click="cancelForm">取 消</g-button>
+      <g-button type="primary" @click="$refs.drawer.closeDrawer()" :loading="loading">{{ loading ? '提交中 ...' : '确 定' }}</g-button>
     </div>
   </div>
-</gj-drawer>
+</g-drawer>
 
 <script>
 export default {
@@ -204,25 +204,25 @@ export default {
 
 ```html
 
-<gj-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+<g-button @click="drawer = true" type="primary" style="margin-left: 16px;">
   点我打开
-</gj-button>
+</g-button>
 
-<gj-drawer
+<g-drawer
   title="我是外面的 Drawer"
   :visible.sync="drawer"
   size="50%">
   <div>
-   <gj-button @click="innerDrawer = true">打开里面的!</gj-button>
-   <gj-drawer
+   <g-button @click="innerDrawer = true">打开里面的!</g-button>
+   <g-drawer
      title="我是里面的"
      :append-to-body="true"
      :before-close="handleClose"
      :visible.sync="innerDrawer">
      <p>_(:зゝ∠)_</p>
-   </gj-drawer>
+   </g-drawer>
   </div>
-</gj-drawer>
+</g-drawer>
 
 <script>
   export default {

@@ -7,7 +7,7 @@
 :::demo 要使用它，只需要在`el-input-number`元素中使用`v-model`绑定变量即可，变量的初始值即为默认值。
 ```html
 <template>
-  <gj-input-number v-model="num" @change="handleChange" :min="1" :max="10" label="描述文字"></gj-input-number>
+  <g-input-number v-model="num" @change="handleChange" :min="1" :max="10" label="描述文字"></g-input-number>
 </template>
 <script>
   export default {
@@ -32,7 +32,7 @@
 
 ```html
 <template>
-  <gj-input-number v-model="num" :disabled="true"></gj-input-number>
+  <g-input-number v-model="num" :disabled="true"></g-input-number>
 </template>
 <script>
   export default {
@@ -54,7 +54,7 @@
 
 ```html
 <template>
-  <gj-input-number v-model="num" :step="2"></gj-input-number>
+  <g-input-number v-model="num" :step="2"></g-input-number>
 </template>
 <script>
   export default {
@@ -74,7 +74,7 @@
 
 ```html
 <template>
-  <gj-input-number v-model="num" :step="2" step-strictly></gj-input-number>
+  <g-input-number v-model="num" :step="2" step-strictly></g-input-number>
 </template>
 <script>
   export default {
@@ -94,7 +94,7 @@
 
 ```html
 <template>
-  <gj-input-number v-model="num" :precision="2" :step="0.1" :max="10"></gj-input-number>
+  <g-input-number v-model="num" :precision="2" :step="0.1" :max="10"></g-input-number>
 </template>
 <script>
   export default {
@@ -121,10 +121,10 @@
 
 ```html
 <template>
-  <gj-input-number v-model="num1"></gj-input-number>
-  <gj-input-number size="medium" v-model="num2"></gj-input-number>
-  <gj-input-number size="small" v-model="num3"></gj-input-number>
-  <gj-input-number size="mini" v-model="num4"></gj-input-number>
+  <g-input-number v-model="num1"></g-input-number>
+  <g-input-number size="medium" v-model="num2"></g-input-number>
+  <g-input-number size="small" v-model="num3"></g-input-number>
+  <g-input-number size="mini" v-model="num4"></g-input-number>
 </template>
 <script>
   export default {
@@ -146,7 +146,7 @@
 :::demo 设置 `controls-position` 属性可以控制按钮位置。
 ```html
 <template>
-  <gj-input-number v-model="num" controls-position="right" @change="handleChange" :min="1" :max="10"></gj-input-number>
+  <g-input-number v-model="num" controls-position="right" @change="handleChange" :min="1" :max="10"></g-input-number>
 </template>
 <script>
   export default {

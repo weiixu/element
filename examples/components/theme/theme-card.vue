@@ -219,19 +219,19 @@
             <span>{{config.name}}</span>
             <span class="right" v-if="isOfficial">by {{config.author}}</span>
             <span class="right more" v-else>
-              <gj-dropdown @command="actionClick">
+              <g-dropdown @command="actionClick">
                 <i class="el-icon-more"></i>
-                <gj-dropdown-menu slot="dropdown">
-                  <gj-dropdown-item command="rename">{{getActionDisplayName('rename-theme')}}</gj-dropdown-item>
-                  <gj-dropdown-item command="copy">{{getActionDisplayName('copy-theme')}}</gj-dropdown-item>
-                  <gj-dropdown-item
+                <g-dropdown-menu slot="dropdown">
+                  <g-dropdown-item command="rename">{{getActionDisplayName('rename-theme')}}</g-dropdown-item>
+                  <g-dropdown-item command="copy">{{getActionDisplayName('copy-theme')}}</g-dropdown-item>
+                  <g-dropdown-item
                       command="delete"
                       style="color: #F56C6C;"
                     >
                       {{getActionDisplayName('delete-theme')}}
-                    </gj-dropdown-item>
-                </gj-dropdown-menu>
-              </gj-dropdown>
+                    </g-dropdown-item>
+                </g-dropdown-menu>
+              </g-dropdown>
             </span>
           </div>
           <div class="description" v-if="isOfficial">{{getActionDisplayName(getDescriptionKey(config.name))}} </div>

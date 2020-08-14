@@ -1,49 +1,122 @@
-<template>
-  <component :is="getName" v-bind="props">
-    <slot></slot>
-  </component>
-</template>
 <script>
 export default {
-  name: 'GjModule',
-  componentName: 'GjModule',
+  name: "GModule",
+  componentName: "GModule",
   props: {
+    params: {
+      type: Object,
+    },
     props: {
-      type: Object
+      type: Object,
     },
     name: {
-      type: String
-    }
+      type: String,
+    },
+  },
+  render(h) {
+    const propsData = this.$options.propsData;
+    const { params } = propsData
+    // console.log(this.$options, { ...propsData });
+    return h(
+      this.getName,
+      {
+        // props: this.props,
+        // on: this.on,
+        props: {
+          placeholder: '请输入内容',
+          ...this.props
+        },
+        on: {
+          change: (val) => {
+            if (params.change) {             
+              params.change.bind(this)(val)
+            }
+          },
+          input: (val) => {
+            propsData.props.value = val
+          },
+        },
+        nativeOn: {
+          click: (e) => {
+            if (params.actionType === 'submit') {             
+              e.stopPropagation()
+              e.preventDefault()
+            }
+            if (params.click) {
+              params.click.bind(this)(params)
+            }
+          },
+        },
+        ...propsData,
+        // // 与 `v-bind:class` 的 API 相同，
+        // // 接受一个字符串、对象或字符串和对象组成的数组
+        // class: {
+        //   foo: true,
+        //   bar: false,
+        // },
+        // // 与 `v-bind:style` 的 API 相同，
+        // // 接受一个字符串、对象，或对象组成的数组
+        // style: {
+        //   color: "red",
+        //   fontSize: "14px",
+        // },
+        // // 普通的 HTML attribute
+        // attrs: {
+        //   id: "foo",
+        // },
+        // // 组件 prop
+        // props: {
+        //   myProp: "bar",
+        // },
+        // // DOM property
+        // domProps: {
+        //   innerHTML: "baz",
+        // },
+        // // 事件监听器在 `on` 内，
+        // // 但不再支持如 `v-on:keyup.enter` 这样的修饰器。
+        // // 需要在处理函数中手动检查 keyCode。
+        // on: {
+        //   click: this.clickHandler,
+        // },
+        // // 仅用于组件，用于监听原生事件，而不是组件内部使用
+        // // `vm.$emit` 触发的事件。
+        // nativeOn: {
+        //   click: this.nativeClickHandler,
+        // },
+        // // 自定义指令。注意，你无法对 `binding` 中的 `oldValue`
+        // // 赋值，因为 Vue 已经自动为你进行了同步。
+        // directives: [
+        //   {
+        //     name: "my-custom-directive",
+        //     value: "2",
+        //     expression: "1 + 1",
+        //     arg: "foo",
+        //     modifiers: {
+        //       bar: true,
+        //     },
+        //   },
+        // ],
+        // // 作用域插槽的格式为
+        // // { name: props => VNode | Array<VNode> }
+        // scopedSlots: {
+        //   default: (props) => createElement("span", props.text),
+        // },
+        // // 如果组件是其它组件的子组件，需为插槽指定名称
+        // slot: "name-of-slot",
+        // // 其它特殊顶层 property
+        // key: "myKey",
+        // ref: "myRef",
+        // // 如果你在渲染函数中给多个元素都应用了相同的 ref 名，
+        // // 那么 `$refs.myRef` 会变成一个数组。
+        // refInFor: true,
+      },
+      this.$slots.default
+    );
   },
   computed: {
     getName() {
-      return this.getCompName(this.name);
-    }
+      return this.name || "div";
+    },
   },
-  // mounted() {
-  //   this.init();
-  // },
-  methods: {
-    // init() {
-    //   console.log(this, this.$attrs, this.$slots);
-    // },
-    getCompName(name) {
-      // 指向对应组件
-      const oName = {
-        input: 'ElInput',
-        select: 'ElSelect',
-        option: 'ElOption',
-        radio: 'ElRadioGroup',
-        radioOpt: 'ElRadio',
-        checkbox: 'ElCheckboxGroup',
-        checkboxOpt: 'ElCheckbox',
-        date: 'ElDatePicker',
-        time: 'ElTimePicker',
-        cascader: 'ElCascader',
-        button: 'ElButton'
-      };
-      return oName[name] ? oName[name] : name ? name : 'div';
-    }
-  }
 };
 </script>

@@ -7,11 +7,11 @@
 :::demo 绑定`v-model`到一个`Boolean`类型的变量。可以使用`active-color`属性与`inactive-color`属性来设置开关的背景色。
 
 ```html
-<gj-switch
+<g-switch
   v-model="value"
   active-color="#13ce66"
   inactive-color="#ff4949">
-</gj-switch>
+</g-switch>
 
 <script>
   export default {
@@ -30,19 +30,19 @@
 :::demo 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
 
 ```html
-<gj-switch
+<g-switch
   v-model="value1"
   active-text="按月付费"
   inactive-text="按年付费">
-</gj-switch>
-<gj-switch
+</g-switch>
+<g-switch
   style="display: block"
   v-model="value2"
   active-color="#13ce66"
   inactive-color="#ff4949"
   active-text="按月付费"
   inactive-text="按年付费">
-</gj-switch>
+</g-switch>
 
 <script>
   export default {
@@ -62,15 +62,15 @@
 :::demo 设置`active-value`和`inactive-value`属性，接受`Boolean`, `String`或`Number`类型的值。
 
 ```html
-<gj-tooltip :content="'Switch value: ' + value" placement="top">
-  <gj-switch
+<g-tooltip :content="'Switch value: ' + value" placement="top">
+  <g-switch
     v-model="value"
     active-color="#13ce66"
     inactive-color="#ff4949"
     active-value="100"
     inactive-value="0">
-  </gj-switch>
-</gj-tooltip>
+  </g-switch>
+</g-tooltip>
 
 <script>
   export default {
@@ -91,14 +91,14 @@
 
 
 ```html
-<gj-switch
+<g-switch
   v-model="value1"
   disabled>
-</gj-switch>
-<gj-switch
+</g-switch>
+<g-switch
   v-model="value2"
   disabled>
-</gj-switch>
+</g-switch>
 <script>
   export default {
     data() {

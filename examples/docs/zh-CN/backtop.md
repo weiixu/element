@@ -10,7 +10,7 @@
 ```html
 <template>
   Scroll down to see the bottom-right button.
-  <gj-backtop target=".page-component__scroll .el-scrollbar__wrap"></gj-backtop>
+  <g-backtop target=".page-component__scroll .el-scrollbar__wrap"></g-backtop>
 </template>
 ```
 
@@ -24,7 +24,7 @@
 ```html
 <template>
   Scroll down to see the bottom-right button.
-  <gj-backtop target=".page-component__scroll .el-scrollbar__wrap" :bottom="100">
+  <g-backtop target=".page-component__scroll .el-scrollbar__wrap" :bottom="100">
     <div
       style="{
         height: 100%;
@@ -38,7 +38,7 @@
     >
       UP
     </div>
-  </gj-backtop>
+  </g-backtop>
 </template>
 ```
 

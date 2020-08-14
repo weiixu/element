@@ -9,25 +9,25 @@
 :::demo 导航菜单默认为垂直模式，通过`mode`属性可以使导航菜单变更为水平模式。另外，在菜单中通过`submenu`组件可以生成二级菜单。Menu 还提供了`background-color`、`text-color`和`active-text-color`，分别用于设置菜单的背景色、菜单的文字颜色和当前激活菜单的文字颜色。
 
 ```html
-<gj-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-  <gj-menu-item index="1">处理中心</gj-menu-item>
-  <gj-submenu index="2">
+<g-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+  <g-menu-item index="1">处理中心</g-menu-item>
+  <g-submenu index="2">
     <template slot="title">我的工作台</template>
-    <gj-menu-item index="2-1">选项1</gj-menu-item>
-    <gj-menu-item index="2-2">选项2</gj-menu-item>
-    <gj-menu-item index="2-3">选项3</gj-menu-item>
-    <gj-submenu index="2-4">
+    <g-menu-item index="2-1">选项1</g-menu-item>
+    <g-menu-item index="2-2">选项2</g-menu-item>
+    <g-menu-item index="2-3">选项3</g-menu-item>
+    <g-submenu index="2-4">
       <template slot="title">选项4</template>
-      <gj-menu-item index="2-4-1">选项1</gj-menu-item>
-      <gj-menu-item index="2-4-2">选项2</gj-menu-item>
-      <gj-menu-item index="2-4-3">选项3</gj-menu-item>
-    </gj-submenu>
-  </gj-submenu>
-  <gj-menu-item index="3" disabled>消息中心</gj-menu-item>
-  <gj-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></gj-menu-item>
-</gj-menu>
+      <g-menu-item index="2-4-1">选项1</g-menu-item>
+      <g-menu-item index="2-4-2">选项2</g-menu-item>
+      <g-menu-item index="2-4-3">选项3</g-menu-item>
+    </g-submenu>
+  </g-submenu>
+  <g-menu-item index="3" disabled>消息中心</g-menu-item>
+  <g-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></g-menu-item>
+</g-menu>
 <div class="line"></div>
-<gj-menu
+<g-menu
   :default-active="activeIndex2"
   class="el-menu-demo"
   mode="horizontal"
@@ -35,22 +35,22 @@
   background-color="#545c64"
   text-color="#fff"
   active-text-color="#ffd04b">
-  <gj-menu-item index="1">处理中心</gj-menu-item>
-  <gj-submenu index="2">
+  <g-menu-item index="1">处理中心</g-menu-item>
+  <g-submenu index="2">
     <template slot="title">我的工作台</template>
-    <gj-menu-item index="2-1">选项1</gj-menu-item>
-    <gj-menu-item index="2-2">选项2</gj-menu-item>
-    <gj-menu-item index="2-3">选项3</gj-menu-item>
-    <gj-submenu index="2-4">
+    <g-menu-item index="2-1">选项1</g-menu-item>
+    <g-menu-item index="2-2">选项2</g-menu-item>
+    <g-menu-item index="2-3">选项3</g-menu-item>
+    <g-submenu index="2-4">
       <template slot="title">选项4</template>
-      <gj-menu-item index="2-4-1">选项1</gj-menu-item>
-      <gj-menu-item index="2-4-2">选项2</gj-menu-item>
-      <gj-menu-item index="2-4-3">选项3</gj-menu-item>
-    </gj-submenu>
-  </gj-submenu>
-  <gj-menu-item index="3" disabled>消息中心</gj-menu-item>
-  <gj-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></gj-menu-item>
-</gj-menu>
+      <g-menu-item index="2-4-1">选项1</g-menu-item>
+      <g-menu-item index="2-4-2">选项2</g-menu-item>
+      <g-menu-item index="2-4-3">选项3</g-menu-item>
+    </g-submenu>
+  </g-submenu>
+  <g-menu-item index="3" disabled>消息中心</g-menu-item>
+  <g-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></g-menu-item>
+</g-menu>
 
 <script>
   export default {
@@ -76,49 +76,49 @@
 
 :::demo 通过`el-menu-item-group`组件可以实现菜单进行分组，分组名可以通过`title`属性直接设定，也可以通过具名 slot 来设定。
 ```html
-<gj-row class="tac">
-  <gj-col :span="12">
+<g-row class="tac">
+  <g-col :span="12">
     <h5>默认颜色</h5>
-    <gj-menu
+    <g-menu
       default-active="2"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
-      <gj-submenu index="1">
+      <g-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>导航一</span>
         </template>
-        <gj-menu-item-group>
+        <g-menu-item-group>
           <template slot="title">分组一</template>
-          <gj-menu-item index="1-1">选项1</gj-menu-item>
-          <gj-menu-item index="1-2">选项2</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-menu-item-group title="分组2">
-          <gj-menu-item index="1-3">选项3</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-submenu index="1-4">
+          <g-menu-item index="1-1">选项1</g-menu-item>
+          <g-menu-item index="1-2">选项2</g-menu-item>
+        </g-menu-item-group>
+        <g-menu-item-group title="分组2">
+          <g-menu-item index="1-3">选项3</g-menu-item>
+        </g-menu-item-group>
+        <g-submenu index="1-4">
           <template slot="title">选项4</template>
-          <gj-menu-item index="1-4-1">选项1</gj-menu-item>
-        </gj-submenu>
-      </gj-submenu>
-      <gj-menu-item index="2">
+          <g-menu-item index="1-4-1">选项1</g-menu-item>
+        </g-submenu>
+      </g-submenu>
+      <g-menu-item index="2">
         <i class="el-icon-menu"></i>
         <span slot="title">导航二</span>
-      </gj-menu-item>
-      <gj-menu-item index="3" disabled>
+      </g-menu-item>
+      <g-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span slot="title">导航三</span>
-      </gj-menu-item>
-      <gj-menu-item index="4">
+      </g-menu-item>
+      <g-menu-item index="4">
         <i class="el-icon-setting"></i>
         <span slot="title">导航四</span>
-      </gj-menu-item>
-    </gj-menu>
-  </gj-col>
-  <gj-col :span="12">
+      </g-menu-item>
+    </g-menu>
+  </g-col>
+  <g-col :span="12">
     <h5>自定义颜色</h5>
-    <gj-menu
+    <g-menu
       default-active="2"
       class="el-menu-vertical-demo"
       @open="handleOpen"
@@ -126,39 +126,39 @@
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b">
-      <gj-submenu index="1">
+      <g-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>导航一</span>
         </template>
-        <gj-menu-item-group>
+        <g-menu-item-group>
           <template slot="title">分组一</template>
-          <gj-menu-item index="1-1">选项1</gj-menu-item>
-          <gj-menu-item index="1-2">选项2</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-menu-item-group title="分组2">
-          <gj-menu-item index="1-3">选项3</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-submenu index="1-4">
+          <g-menu-item index="1-1">选项1</g-menu-item>
+          <g-menu-item index="1-2">选项2</g-menu-item>
+        </g-menu-item-group>
+        <g-menu-item-group title="分组2">
+          <g-menu-item index="1-3">选项3</g-menu-item>
+        </g-menu-item-group>
+        <g-submenu index="1-4">
           <template slot="title">选项4</template>
-          <gj-menu-item index="1-4-1">选项1</gj-menu-item>
-        </gj-submenu>
-      </gj-submenu>
-      <gj-menu-item index="2">
+          <g-menu-item index="1-4-1">选项1</g-menu-item>
+        </g-submenu>
+      </g-submenu>
+      <g-menu-item index="2">
         <i class="el-icon-menu"></i>
         <span slot="title">导航二</span>
-      </gj-menu-item>
-      <gj-menu-item index="3" disabled>
+      </g-menu-item>
+      <g-menu-item index="3" disabled>
         <i class="el-icon-document"></i>
         <span slot="title">导航三</span>
-      </gj-menu-item>
-      <gj-menu-item index="4">
+      </g-menu-item>
+      <g-menu-item index="4">
         <i class="el-icon-setting"></i>
         <span slot="title">导航四</span>
-      </gj-menu-item>
-    </gj-menu>
-  </gj-col>
-</gj-row>
+      </g-menu-item>
+    </g-menu>
+  </g-col>
+</g-row>
 
 <script>
   export default {
@@ -179,42 +179,42 @@
 
 :::demo
 ```html
-<gj-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-  <gj-radio-button :label="false">展开</gj-radio-button>
-  <gj-radio-button :label="true">收起</gj-radio-button>
-</gj-radio-group>
-<gj-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-  <gj-submenu index="1">
+<g-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+  <g-radio-button :label="false">展开</g-radio-button>
+  <g-radio-button :label="true">收起</g-radio-button>
+</g-radio-group>
+<g-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+  <g-submenu index="1">
     <template slot="title">
       <i class="el-icon-location"></i>
       <span slot="title">导航一</span>
     </template>
-    <gj-menu-item-group>
+    <g-menu-item-group>
       <span slot="title">分组一</span>
-      <gj-menu-item index="1-1">选项1</gj-menu-item>
-      <gj-menu-item index="1-2">选项2</gj-menu-item>
-    </gj-menu-item-group>
-    <gj-menu-item-group title="分组2">
-      <gj-menu-item index="1-3">选项3</gj-menu-item>
-    </gj-menu-item-group>
-    <gj-submenu index="1-4">
+      <g-menu-item index="1-1">选项1</g-menu-item>
+      <g-menu-item index="1-2">选项2</g-menu-item>
+    </g-menu-item-group>
+    <g-menu-item-group title="分组2">
+      <g-menu-item index="1-3">选项3</g-menu-item>
+    </g-menu-item-group>
+    <g-submenu index="1-4">
       <span slot="title">选项4</span>
-      <gj-menu-item index="1-4-1">选项1</gj-menu-item>
-    </gj-submenu>
-  </gj-submenu>
-  <gj-menu-item index="2">
+      <g-menu-item index="1-4-1">选项1</g-menu-item>
+    </g-submenu>
+  </g-submenu>
+  <g-menu-item index="2">
     <i class="el-icon-menu"></i>
     <span slot="title">导航二</span>
-  </gj-menu-item>
-  <gj-menu-item index="3" disabled>
+  </g-menu-item>
+  <g-menu-item index="3" disabled>
     <i class="el-icon-document"></i>
     <span slot="title">导航三</span>
-  </gj-menu-item>
-  <gj-menu-item index="4">
+  </g-menu-item>
+  <g-menu-item index="4">
     <i class="el-icon-setting"></i>
     <span slot="title">导航四</span>
-  </gj-menu-item>
-</gj-menu>
+  </g-menu-item>
+</g-menu>
 
 <style>
   .el-menu-vertical-demo:not(.el-menu--collapse) {

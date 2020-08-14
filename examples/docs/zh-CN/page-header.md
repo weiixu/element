@@ -6,8 +6,8 @@
 
 :::demo
 ```html
-<gj-page-header @back="goBack" content="详情页面">
-</gj-page-header>
+<g-page-header @back="goBack" content="详情页面">
+</g-page-header>
 
 <script>
   export default {

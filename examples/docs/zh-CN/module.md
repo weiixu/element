@@ -1,10 +1,10 @@
 ## Module 组件容器
 用于简单组件布局的容器，统一组件布局：
 
-`<gj-module>`：扩展组件布局功能。
+`<g-module>`：扩展组件布局功能。
 
 :::tip
-包裹组件，扩展功能。`<gj-module name="el-main">`。
+包裹组件，扩展功能。`<g-module name="g-main">`。
 :::
 
 ### 简单布局
@@ -12,9 +12,9 @@
 :::demo
 ```html
 
-<gj-module v-for="item in moduleList" :name="item.name" :props="item.props">
-  <gj-module v-if="item.children" v-for="child in item.children" :name="child.name">{{child.name}}</gj-module>
-</gj-module>
+<g-module v-for="(item, i) in moduleList" :name="item.name" :props="item.props" :key="item.name + i">
+  <g-module v-if="item.children" v-for="(child, k) in item.children" :name="child.name" :key="child.name + k">{{child.name}}</g-module>
+</g-module>
 
 <style>
   .el-header, .el-footer {
@@ -45,12 +45,12 @@
     data() {
       return {
         moduleList: [{
-          name: 'el-container',
+          name: 'g-container',
           props: {direction: 'vertical'},
           children: [{
-            name: 'el-header'
+            name: 'g-header'
           },{
-            name: 'el-main'
+            name: 'g-main'
           }]
         }],
       };
@@ -65,83 +65,83 @@
 ### 实例
 
 :::tip
-部分组件存在父子调用关系，可打包成一个组件。例如：`<gj-module name="gj-table-group"><gj-table>...</gj-table></gj-module>`。
+部分组件存在父子调用关系，可打包成一个组件。例如：`<g-module name="g-table-group"><g-table>...</g-table></g-module>`。
 :::
 
 :::demo
 ```html
-<gj-module name="el-container" style="height: 500px; border: 1px solid #eee" >
-  <gj-module name="el-aside" width="200px" style="background-color: rgb(238, 241, 246)">
-    <gj-module name="el-menu" :default-openeds="['1', '3']">
-      <gj-submenu index="1">
-        <template slot="title"><i class="el-icon-message"></i>导航一</template>
-        <gj-module name="el-menu-item-group">
+<g-module name="g-container" style="height: 500px; border: 1px solid #eee" >
+  <g-module name="g-aside" width="200px" style="background-color: rgb(238, 241, 246)">
+    <g-module name="g-menu" :default-openeds="['1', '3']">
+      <g-submenu index="1">
+        <template slot="title"><i class="g-icon-message"></i>导航一</template>
+        <g-module name="g-menu-item-group">
           <template slot="title">分组一</template>
-          <gj-module name="el-menu-item" index="1-1">选项1</gj-module>
-          <gj-module name="el-menu-item" index="1-2">选项2</gj-module>
-        </gj-module>
-        <gj-module name="el-menu-item-group" title="分组2">
-          <gj-module name="el-menu-item" index="1-3">选项3</gj-module>
-        </gj-module>
-        <gj-submenu index="1-4">
+          <g-module name="g-menu-item" index="1-1">选项1</g-module>
+          <g-module name="g-menu-item" index="1-2">选项2</g-module>
+        </g-module>
+        <g-module name="g-menu-item-group" title="分组2">
+          <g-module name="g-menu-item" index="1-3">选项3</g-module>
+        </g-module>
+        <g-submenu index="1-4">
           <template slot="title">选项4</template>
-          <gj-module name="el-menu-item" index="1-4-1">选项4-1</gj-module>
-        </gj-submenu>
-      </gj-submenu>
-      <gj-submenu index="2">
-        <template slot="title"><i class="el-icon-menu"></i>导航二</template>
-        <gj-module name="el-menu-item-group">
+          <g-module name="g-menu-item" index="1-4-1">选项4-1</g-module>
+        </g-submenu>
+      </g-submenu>
+      <g-submenu index="2">
+        <template slot="title"><i class="g-icon-menu"></i>导航二</template>
+        <g-module name="g-menu-item-group">
           <template slot="title">分组一</template>
-          <gj-module name="el-menu-item" index="2-1">选项1</gj-module>
-          <gj-module name="el-menu-item" index="2-2">选项2</gj-module>
-        </gj-module>
-        <gj-module name="el-menu-item-group" title="分组2">
-          <gj-module name="el-menu-item" index="2-3">选项3</gj-module>
-        </gj-module>
-        <gj-submenu index="2-4">
+          <g-module name="g-menu-item" index="2-1">选项1</g-module>
+          <g-module name="g-menu-item" index="2-2">选项2</g-module>
+        </g-module>
+        <g-module name="g-menu-item-group" title="分组2">
+          <g-module name="g-menu-item" index="2-3">选项3</g-module>
+        </g-module>
+        <g-submenu index="2-4">
           <template slot="title">选项4</template>
-          <gj-module name="el-menu-item" index="2-4-1">选项4-1</gj-module>
-        </gj-submenu>
-      </gj-submenu>
-      <gj-submenu index="3">
-        <template slot="title"><i class="el-icon-setting"></i>导航三</template>
-        <gj-module name="el-menu-item-group">
+          <g-module name="g-menu-item" index="2-4-1">选项4-1</g-module>
+        </g-submenu>
+      </g-submenu>
+      <g-submenu index="3">
+        <template slot="title"><i class="g-icon-setting"></i>导航三</template>
+        <g-module name="g-menu-item-group">
           <template slot="title">分组一</template>
-          <gj-module name="el-menu-item" index="3-1">选项1</gj-module>
-          <gj-module name="el-menu-item" index="3-2">选项2</gj-module>
-        </gj-module>
-        <gj-module name="el-menu-item-group" title="分组2">
-          <gj-module name="el-menu-item" index="3-3">选项3</gj-module>
-        </gj-module>
-        <gj-submenu index="3-4">
+          <g-module name="g-menu-item" index="3-1">选项1</g-module>
+          <g-module name="g-menu-item" index="3-2">选项2</g-module>
+        </g-module>
+        <g-module name="g-menu-item-group" title="分组2">
+          <g-module name="g-menu-item" index="3-3">选项3</g-module>
+        </g-module>
+        <g-submenu index="3-4">
           <template slot="title">选项4</template>
-          <gj-module name="el-menu-item" index="3-4-1">选项4-1</gj-module>
-        </gj-submenu>
-      </gj-submenu>
-    </gj-module>
-  </gj-module>
+          <g-module name="g-menu-item" index="3-4-1">选项4-1</g-module>
+        </g-submenu>
+      </g-submenu>
+    </g-module>
+  </g-module>
   
-  <gj-module name="el-container">
-    <gj-header name="el-header" style="text-align: right; font-size: 12px">
-      <gj-dropdown>
-        <i class="el-icon-setting" style="margin-right: 15px"></i>
-        <gj-dropdown-menu slot="dropdown">
-          <gj-dropdown-item>查看</gj-dropdown-item>
-          <gj-dropdown-item>新增</gj-dropdown-item>
-          <gj-dropdown-item>删除</gj-dropdown-item>
-        </gj-dropdown-menu>
-      </gj-dropdown>
+  <g-module name="g-container">
+    <g-header name="g-header" style="text-align: right; font-size: 12px">
+      <g-dropdown>
+        <i class="g-icon-setting" style="margin-right: 15px"></i>
+        <g-dropdown-menu slot="dropdown">
+          <g-dropdown-item>查看</g-dropdown-item>
+          <g-dropdown-item>新增</g-dropdown-item>
+          <g-dropdown-item>删除</g-dropdown-item>
+        </g-dropdown-menu>
+      </g-dropdown>
       <span>王小虎</span>
-    </gj-header>
-    <gj-module name="el-main">
-      <gj-table :data="tableData">
-        <gj-table-column prop="date" label="日期" width="140"></gj-table-column>
-        <gj-table-column prop="name" label="姓名" width="120"></gj-table-column>
-        <gj-table-column prop="address" label="地址"></gj-table-column>
-      </gj-table>
-    </gj-module>
-  </gj-module>
-</gj-module>
+    </g-header>
+    <g-module name="g-main">
+      <g-table :data="tableData">
+        <g-table-column prop="date" label="日期" width="140"></g-table-column>
+        <g-table-column prop="name" label="姓名" width="120"></g-table-column>
+        <g-table-column prop="address" label="地址"></g-table-column>
+      </g-table>
+    </g-module>
+  </g-module>
+</g-module>
 
 <style>
   .el-header {

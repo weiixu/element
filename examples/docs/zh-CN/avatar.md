@@ -9,26 +9,26 @@
 :::demo
 ```html
 <template>
-  <gj-row class="demo-avatar demo-basic">
-    <gj-col :span="12">
+  <g-row class="demo-avatar demo-basic">
+    <g-col :span="12">
       <div class="sub-title">circle</div>
       <div class="demo-basic--circle">
-        <div class="block"><gj-avatar :size="50" :src="circleUrl"></gj-avatar></div>
+        <div class="block"><g-avatar :size="50" :src="circleUrl"></g-avatar></div>
         <div class="block" v-for="size in sizeList" :key="size">
-          <gj-avatar :size="size" :src="circleUrl"></gj-avatar>
+          <g-avatar :size="size" :src="circleUrl"></g-avatar>
         </div>
       </div>
-    </gj-col>  
-    <gj-col :span="12">
+    </g-col>  
+    <g-col :span="12">
       <div class="sub-title">square</div>
       <div class="demo-basic--circle">
-        <div class="block"><gj-avatar shape="square" :size="50" :src="squareUrl"></gj-avatar></div>
+        <div class="block"><g-avatar shape="square" :size="50" :src="squareUrl"></g-avatar></div>
         <div class="block" v-for="size in sizeList" :key="size">
-          <gj-avatar shape="square" :size="size" :src="squareUrl"></gj-avatar>
+          <g-avatar shape="square" :size="size" :src="squareUrl"></g-avatar>
         </div>
       </div>
-    </gj-col> 
-  </gj-row>
+    </g-col> 
+  </g-row>
 </template>
 <script>
   export default {
@@ -54,13 +54,13 @@
 <template>
   <div class="demo-type">
     <div>
-      <gj-avatar icon="el-icon-user-solid"></gj-avatar>
+      <g-avatar icon="el-icon-user-solid"></g-avatar>
     </div>
     <div>
-      <gj-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></gj-avatar>
+      <g-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></g-avatar>
     </div>
     <div>
-      <gj-avatar> user </gj-avatar>
+      <g-avatar> user </g-avatar>
     </div>
   </div>
 </template>
@@ -75,9 +75,9 @@
 ```html
 <template>
   <div class="demo-type">
-    <gj-avatar :size="60" src="https://empty" @error="errorHandler">
+    <g-avatar :size="60" src="https://empty" @error="errorHandler">
       <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
-    </gj-avatar>
+    </g-avatar>
   </div>
 </template>
 <script>
@@ -103,7 +103,7 @@
   <div class="demo-fit">
     <div class="block" v-for="fit in fits" :key="fit">
         <span class="title">{{ fit }}</span>
-        <gj-avatar shape="square" :size="100" :fit="fit" :src="url"></gj-avatar>
+        <g-avatar shape="square" :size="100" :fit="fit" :src="url"></g-avatar>
     </div>
   </div>
 </template>

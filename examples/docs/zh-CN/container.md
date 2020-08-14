@@ -1,75 +1,75 @@
 ## Container 布局容器
 用于布局的容器组件，方便快速搭建页面的基本结构：
 
-`<gj-container>`：外层容器。当子元素中包含 `<gj-header>` 或 `<gj-footer>` 时，全部子元素会垂直上下排列，否则会水平左右排列。
+`<g-container>`：外层容器。当子元素中包含 `<g-header>` 或 `<g-footer>` 时，全部子元素会垂直上下排列，否则会水平左右排列。
 
-`<gj-header>`：顶栏容器。
+`<g-header>`：顶栏容器。
 
-`<gj-aside>`：侧边栏容器。
+`<g-aside>`：侧边栏容器。
 
-`<gj-main>`：主要区域容器。
+`<g-main>`：主要区域容器。
 
-`<gj-footer>`：底栏容器。
+`<g-footer>`：底栏容器。
 
 :::tip
-以上组件采用了 flex 布局，使用前请确定目标浏览器是否兼容。此外，`<gj-container>` 的子元素只能是后四者，后四者的父元素也只能是 `<gj-container>`。
+以上组件采用了 flex 布局，使用前请确定目标浏览器是否兼容。此外，`<g-container>` 的子元素只能是后四者，后四者的父元素也只能是 `<g-container>`。
 :::
 
 ### 常见页面布局
 
 :::demo
 ```html
-<gj-container>
-  <gj-header>Header</gj-header>
-  <gj-main>Main</gj-main>
-</gj-container>
+<g-container>
+  <g-header>Header</g-header>
+  <g-main>Main</g-main>
+</g-container>
 
-<gj-container>
-  <gj-header>Header</gj-header>
-  <gj-main>Main</gj-main>
-  <gj-footer>Footer</gj-footer>
-</gj-container>
+<g-container>
+  <g-header>Header</g-header>
+  <g-main>Main</g-main>
+  <g-footer>Footer</g-footer>
+</g-container>
 
-<gj-container>
-  <gj-aside width="200px">Aside</gj-aside>
-  <gj-main>Main</gj-main>
-</gj-container>
+<g-container>
+  <g-aside width="200px">Aside</g-aside>
+  <g-main>Main</g-main>
+</g-container>
 
-<gj-container>
-  <gj-header>Header</gj-header>
-  <gj-container>
-    <gj-aside width="200px">Aside</gj-aside>
-    <gj-main>Main</gj-main>
-  </gj-container>
-</gj-container>
+<g-container>
+  <g-header>Header</g-header>
+  <g-container>
+    <g-aside width="200px">Aside</g-aside>
+    <g-main>Main</g-main>
+  </g-container>
+</g-container>
 
-<gj-container>
-  <gj-header>Header</gj-header>
-  <gj-container>
-    <gj-aside width="200px">Aside</gj-aside>
-    <gj-container>
-      <gj-main>Main</gj-main>
-      <gj-footer>Footer</gj-footer>
-    </gj-container>
-  </gj-container>
-</gj-container>
+<g-container>
+  <g-header>Header</g-header>
+  <g-container>
+    <g-aside width="200px">Aside</g-aside>
+    <g-container>
+      <g-main>Main</g-main>
+      <g-footer>Footer</g-footer>
+    </g-container>
+  </g-container>
+</g-container>
 
-<gj-container>
-  <gj-aside width="200px">Aside</gj-aside>
-  <gj-container>
-    <gj-header>Header</gj-header>
-    <gj-main>Main</gj-main>
-  </gj-container>
-</gj-container>
+<g-container>
+  <g-aside width="200px">Aside</g-aside>
+  <g-container>
+    <g-header>Header</g-header>
+    <g-main>Main</g-main>
+  </g-container>
+</g-container>
 
-<gj-container>
-  <gj-aside width="200px">Aside</gj-aside>
-  <gj-container>
-    <gj-header>Header</gj-header>
-    <gj-main>Main</gj-main>
-    <gj-footer>Footer</gj-footer>
-  </gj-container>
-</gj-container>
+<g-container>
+  <g-aside width="200px">Aside</g-aside>
+  <g-container>
+    <g-header>Header</g-header>
+    <g-main>Main</g-main>
+    <g-footer>Footer</g-footer>
+  </g-container>
+</g-container>
 
 <style>
   .el-header, .el-footer {
@@ -113,82 +113,82 @@
 
 :::demo
 ```html
-<gj-container style="height: 500px; border: 1px solid #eee">
-  <gj-aside width="200px" style="background-color: rgb(238, 241, 246)">
-    <gj-menu :default-openeds="['1', '3']">
-      <gj-submenu index="1">
+<g-container style="height: 500px; border: 1px solid #eee">
+  <g-aside width="200px" style="background-color: rgb(238, 241, 246)">
+    <g-menu :default-openeds="['1', '3']">
+      <g-submenu index="1">
         <template slot="title"><i class="el-icon-message"></i>导航一</template>
-        <gj-menu-item-group>
+        <g-menu-item-group>
           <template slot="title">分组一</template>
-          <gj-menu-item index="1-1">选项1</gj-menu-item>
-          <gj-menu-item index="1-2">选项2</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-menu-item-group title="分组2">
-          <gj-menu-item index="1-3">选项3</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-submenu index="1-4">
+          <g-menu-item index="1-1">选项1</g-menu-item>
+          <g-menu-item index="1-2">选项2</g-menu-item>
+        </g-menu-item-group>
+        <g-menu-item-group title="分组2">
+          <g-menu-item index="1-3">选项3</g-menu-item>
+        </g-menu-item-group>
+        <g-submenu index="1-4">
           <template slot="title">选项4</template>
-          <gj-menu-item index="1-4-1">选项4-1</gj-menu-item>
-        </gj-submenu>
-      </gj-submenu>
-      <gj-submenu index="2">
+          <g-menu-item index="1-4-1">选项4-1</g-menu-item>
+        </g-submenu>
+      </g-submenu>
+      <g-submenu index="2">
         <template slot="title"><i class="el-icon-menu"></i>导航二</template>
-        <gj-menu-item-group>
+        <g-menu-item-group>
           <template slot="title">分组一</template>
-          <gj-menu-item index="2-1">选项1</gj-menu-item>
-          <gj-menu-item index="2-2">选项2</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-menu-item-group title="分组2">
-          <gj-menu-item index="2-3">选项3</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-submenu index="2-4">
+          <g-menu-item index="2-1">选项1</g-menu-item>
+          <g-menu-item index="2-2">选项2</g-menu-item>
+        </g-menu-item-group>
+        <g-menu-item-group title="分组2">
+          <g-menu-item index="2-3">选项3</g-menu-item>
+        </g-menu-item-group>
+        <g-submenu index="2-4">
           <template slot="title">选项4</template>
-          <gj-menu-item index="2-4-1">选项4-1</gj-menu-item>
-        </gj-submenu>
-      </gj-submenu>
-      <gj-submenu index="3">
+          <g-menu-item index="2-4-1">选项4-1</g-menu-item>
+        </g-submenu>
+      </g-submenu>
+      <g-submenu index="3">
         <template slot="title"><i class="el-icon-setting"></i>导航三</template>
-        <gj-menu-item-group>
+        <g-menu-item-group>
           <template slot="title">分组一</template>
-          <gj-menu-item index="3-1">选项1</gj-menu-item>
-          <gj-menu-item index="3-2">选项2</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-menu-item-group title="分组2">
-          <gj-menu-item index="3-3">选项3</gj-menu-item>
-        </gj-menu-item-group>
-        <gj-submenu index="3-4">
+          <g-menu-item index="3-1">选项1</g-menu-item>
+          <g-menu-item index="3-2">选项2</g-menu-item>
+        </g-menu-item-group>
+        <g-menu-item-group title="分组2">
+          <g-menu-item index="3-3">选项3</g-menu-item>
+        </g-menu-item-group>
+        <g-submenu index="3-4">
           <template slot="title">选项4</template>
-          <gj-menu-item index="3-4-1">选项4-1</gj-menu-item>
-        </gj-submenu>
-      </gj-submenu>
-    </gj-menu>
-  </gj-aside>
+          <g-menu-item index="3-4-1">选项4-1</g-menu-item>
+        </g-submenu>
+      </g-submenu>
+    </g-menu>
+  </g-aside>
   
-  <gj-container>
-    <gj-header style="text-align: right; font-size: 12px">
-      <gj-dropdown>
+  <g-container>
+    <g-header style="text-align: right; font-size: 12px">
+      <g-dropdown>
         <i class="el-icon-setting" style="margin-right: 15px"></i>
-        <gj-dropdown-menu slot="dropdown">
-          <gj-dropdown-item>查看</gj-dropdown-item>
-          <gj-dropdown-item>新增</gj-dropdown-item>
-          <gj-dropdown-item>删除</gj-dropdown-item>
-        </gj-dropdown-menu>
-      </gj-dropdown>
+        <g-dropdown-menu slot="dropdown">
+          <g-dropdown-item>查看</g-dropdown-item>
+          <g-dropdown-item>新增</g-dropdown-item>
+          <g-dropdown-item>删除</g-dropdown-item>
+        </g-dropdown-menu>
+      </g-dropdown>
       <span>王小虎</span>
-    </gj-header>
+    </g-header>
     
-    <gj-main>
-      <gj-table :data="tableData">
-        <gj-table-column prop="date" label="日期" width="140">
-        </gj-table-column>
-        <gj-table-column prop="name" label="姓名" width="120">
-        </gj-table-column>
-        <gj-table-column prop="address" label="地址">
-        </gj-table-column>
-      </gj-table>
-    </gj-main>
-  </gj-container>
-</gj-container>
+    <g-main>
+      <g-table :data="tableData">
+        <g-table-column prop="date" label="日期" width="140">
+        </g-table-column>
+        <g-table-column prop="name" label="姓名" width="120">
+        </g-table-column>
+        <g-table-column prop="address" label="地址">
+        </g-table-column>
+      </g-table>
+    </g-main>
+  </g-container>
+</g-container>
 
 <style>
   .el-header {

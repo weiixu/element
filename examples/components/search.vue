@@ -1,5 +1,5 @@
 <template>
-  <gj-autocomplete
+  <g-autocomplete
     v-model="query"
     size="small"
     :popper-class="`algolia-search${ isEmpty ? ' is-empty' : '' }`"
@@ -32,7 +32,7 @@
         class="algolia-search-empty"
         v-if="props.item.isEmpty">{{ emptyText }}</p>
     </template>
-  </gj-autocomplete>
+  </g-autocomplete>
 </template>
 
 <style lang="scss">

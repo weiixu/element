@@ -273,12 +273,12 @@
           <!-- logo -->
           <slot>
             <img
-              src="../assets/images/gj-logo.svg"
-              alt="gj-logo"
+              src="../assets/images/g-logo.svg"
+              alt="g-logo"
               class="nav-logo">
             <img
-              src="../assets/images/gj-logo-small.svg"
-              alt="gj-logo"
+              src="../assets/images/g-logo-small.svg"
+              alt="g-logo"
               class="nav-logo-small">
           </slot>
 
@@ -324,7 +324,7 @@
 
           <!-- 版本选择器 -->
           <li class="nav-item nav-versions" v-show="isComponentPage">
-            <gj-dropdown
+            <g-dropdown
               trigger="click"
               class="nav-dropdown"
               :class="{ 'is-active': verDropdownVisible }">
@@ -332,23 +332,23 @@
                 {{ version }}
                 <i class="el-icon-arrow-down el-icon--right"></i>
               </span>
-              <gj-dropdown-menu
+              <g-dropdown-menu
                 slot="dropdown"
                 class="nav-dropdown-list"
                 @input="handleVerDropdownToggle">
-                <gj-dropdown-item
+                <g-dropdown-item
                   v-for="item in Object.keys(versions)"
                   :key="item"
                   @click.native="switchVersion(item)">
                   {{ item }}
-                </gj-dropdown-item>
-              </gj-dropdown-menu>
-            </gj-dropdown>
+                </g-dropdown-item>
+              </g-dropdown-menu>
+            </g-dropdown>
           </li>
 
           <!-- 语言选择器 -->
           <li class="nav-item lang-item">
-            <gj-dropdown
+            <g-dropdown
               trigger="click"
               class="nav-dropdown nav-lang"
               :class="{ 'is-active': langDropdownVisible }">
@@ -356,18 +356,18 @@
                 {{ displayedLang }}
                 <i class="el-icon-arrow-down el-icon--right"></i>
               </span>
-              <gj-dropdown-menu
+              <g-dropdown-menu
                 slot="dropdown"
                 class="nav-dropdown-list"
                 @input="handleLangDropdownToggle">
-                <gj-dropdown-item
+                <g-dropdown-item
                   v-for="(value, key) in langs"
                   :key="key"
                   @click.native="switchLang(key)">
                   {{ value }}
-                </gj-dropdown-item>
-              </gj-dropdown-menu>
-            </gj-dropdown>
+                </g-dropdown-item>
+              </g-dropdown-menu>
+            </g-dropdown>
           </li>
         </ul>
       </div>

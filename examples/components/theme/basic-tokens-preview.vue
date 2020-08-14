@@ -23,8 +23,8 @@
   <div class="component-preview">
     <h4>Color</h4>
     <div class="color">
-      <gj-row :gutter="12">
-        <gj-col :span="4" v-for="(color, key) in colorLine" :key="key">
+      <g-row :gutter="12">
+        <g-col :span="4" v-for="(color, key) in colorLine" :key="key">
           <div class="demo-color-box" :style="{ background: dataProxy(color) }">
             {{color}}
             <div class="value">{{dataProxy(color)}}</div>
@@ -37,37 +37,37 @@
               ></div>
             </div>
           </div>
-        </gj-col>
-      </gj-row>
-      <gj-row :gutter="12">
-        <gj-col :span="4">
+        </g-col>
+      </g-row>
+      <g-row :gutter="12">
+        <g-col :span="4">
           <div class="demo-color-box demo-color-box-other" :style="{ background: color_text_primary }">
             Primary Text
             <div class="value">{{color_text_primary}}</div>
           </div>
-        </gj-col>
-        <gj-col :span="4">
+        </g-col>
+        <g-col :span="4">
           <div class="demo-color-box demo-color-box-other" :style="{ background: color_text_regular }">
             Regular Text
             <div class="value">{{color_text_regular}}</div>
           </div>
-        </gj-col>
-        <gj-col :span="4">
+        </g-col>
+        <g-col :span="4">
           <div class="demo-color-box demo-color-box-other" :style="{ background: color_text_secondary }">
             Secondary Text
             <div class="value">{{color_text_secondary}}</div>
           </div>
-        </gj-col>
-        <gj-col :span="4">
+        </g-col>
+        <g-col :span="4">
           <div class="demo-color-box demo-color-box-other" :style="{ background: color_text_placeholder }">
             Placeholder
             <div class="value">{{color_text_placeholder}}</div>
           </div>
-        </gj-col>
-      </gj-row>
+        </g-col>
+      </g-row>
 
-      <gj-row :gutter="12">
-        <gj-col :span="4">
+      <g-row :gutter="12">
+        <g-col :span="4">
           <div
             class="demo-color-box demo-color-box-other demo-color-box-lite"
             :style="{ background: border_color_base }"
@@ -75,8 +75,8 @@
             Border Base
             <div class="value">{{border_color_base}}</div>
           </div>
-        </gj-col>
-        <gj-col :span="4">
+        </g-col>
+        <g-col :span="4">
           <div
             class="demo-color-box demo-color-box-other demo-color-box-lite"
             :style="{ background: border_color_light }"
@@ -84,8 +84,8 @@
             Border Light
             <div class="value">{{border_color_light}}</div>
           </div>
-        </gj-col>
-        <gj-col :span="4">
+        </g-col>
+        <g-col :span="4">
           <div
             class="demo-color-box demo-color-box-other demo-color-box-lite"
             :style="{ background: border_color_lighter }"
@@ -93,8 +93,8 @@
             Border Lighter
             <div class="value">{{border_color_lighter}}</div>
           </div>
-        </gj-col>
-        <gj-col :span="4">
+        </g-col>
+        <g-col :span="4">
           <div
             class="demo-color-box demo-color-box-other demo-color-box-lite"
             :style="{ background: border_color_extra_light }"
@@ -102,17 +102,17 @@
             Border Extralight
             <div class="value">{{border_color_extra_light}}</div>
           </div>
-        </gj-col>
-      </gj-row>
+        </g-col>
+      </g-row>
 
-      <gj-row :gutter="12">
-        <gj-col :span="4">
+      <g-row :gutter="12">
+        <g-col :span="4">
           <div class="demo-color-box demo-color-box-other" :style="{ background: color_black }">
             Background B
             <div class="value">{{color_black}}</div>
           </div>
-        </gj-col>
-        <gj-col :span="4">
+        </g-col>
+        <g-col :span="4">
           <div
             class="demo-color-box demo-color-box-other"
             :style="{ background: color_white, color: '#303133', border: '1px solid #eee' }"
@@ -120,26 +120,26 @@
             Background W
             <div class="value">{{color_white}}</div>
           </div>
-        </gj-col>
-        <gj-col :span="4">
+        </g-col>
+        <g-col :span="4">
           <div class="demo-color-box demo-color-box-other bg-transparent">
             Background
             <div class="value">Transparent</div>
           </div>
-        </gj-col>
-      </gj-row>
+        </g-col>
+      </g-row>
     </div>
     <h4>Typography</h4>
-    <gj-row :gutter="12">
-      <gj-col :span="6" class="heading">
+    <g-row :gutter="12">
+      <g-col :span="6" class="heading">
         <div :style="{ fontSize: font_size_extra_large }">Heading1</div>
         <div :style="{ fontSize: font_size_large }">Heading2</div>
         <div :style="{ fontSize: font_size_medium }">Heading3</div>
         <div :style="{ fontSize: font_size_base }">Heading4</div>
         <div :style="{ fontSize: font_size_small }">Heading5</div>
         <div :style="{ fontSize: font_size_extra_small }">Heading6</div>
-      </gj-col>
-      <gj-col :span="9">
+      </g-col>
+      <g-col :span="9">
         <div class="title">Example body text</div>
         <p 
           class="paragraph"
@@ -149,8 +149,8 @@
             lineHeight: font_line_height_primary
           }" >
           With MySpace becoming more popular every day, there is the constant need to be different. There are millions of users. If MySpace layouts are chosen well, then you can enhance your profile a great deal.</p>
-      </gj-col>
-      <gj-col :span="9">
+      </g-col>
+      <g-col :span="9">
         <div class="title">Example small text</div>
         <p 
           class="paragraph"
@@ -160,8 +160,8 @@
             lineHeight: font_line_height_secondary
           }" >
           Computers have become ubiquitous in almost every facet of our lives. At work, desk jockeys spend hours in front of their desktops, while delivery people scan bar codes with handhelds and workers in the field stay in touch with the central office via their notebooks. Computer hardware weaves itself through the fabric of our lives.</p>
-      </gj-col>
-    </gj-row>
+      </g-col>
+    </g-row>
   </div>
 </template>
 

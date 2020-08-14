@@ -1,19 +1,19 @@
 <template>
   <section class="config" :key="displayName">
     <div class="config-label">
-      <gj-tooltip :content="displayName" placement="top">
+      <g-tooltip :content="displayName" placement="top">
         <span>{{displayKeyName}}</span>
-      </gj-tooltip>
+      </g-tooltip>
     </div>
     <div class="config-content">
       <div class="content-80">
-        <gj-input
+        <g-input
           size="medium"
           :value=displayValue
           readonly
           slot="reference"
           @click.native="onInputClick"
-        ></gj-input>
+        ></g-input>
       </div>
       <div class="content-20">
         <color-picker 

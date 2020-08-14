@@ -11,29 +11,29 @@
       <predefine v-if="predefine" :color="color" :colors="predefine"></predefine>
       <div class="el-color-dropdown__btns">
         <span class="el-color-dropdown__value">
-          <gj-input
+          <g-input
             v-model="customInput"
             @keyup.native.enter="handleConfirm"
             @blur="handleConfirm"
             :validate-event="false"
             size="mini">
-          </gj-input>
+          </g-input>
         </span>
-        <!-- <gj-button
+        <!-- <g-button
           size="mini"
           type="text"
           class="el-color-dropdown__link-btn"
           @click="$emit('clear')">
           {{ t('el.colorpicker.clear') }}
-        </gj-button> -->
-        <gj-button
+        </g-button> -->
+        <g-button
           plain
           size="mini"
           type="primary"
           class="el-color-dropdown__btn"
           @click="confirmValue">
           {{ t('el.colorpicker.confirm') }}
-        </gj-button>
+        </g-button>
       </div>
       <color-list 
         v-if="colorList && colorList.length > 0" 

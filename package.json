@@ -1,5 +1,5 @@
 {
-  "name": "element-gj",
+  "name": "element-gui",
   "version": "1.0.0",
   "description": "A Component Library for Vue.js. base on element-ui v2.13.2.",
   "main": "lib/element-ui.common.js",

@@ -9,18 +9,18 @@
 :::demo 通过组件`slot`来设置下拉触发的元素以及需要通过具名`slot`为`dropdown` 来设置下拉菜单。默认情况下，下拉按钮只要`hover`即可，无需点击也会显示下拉菜单。
 
 ```html
-<gj-dropdown>
+<g-dropdown>
   <span class="el-dropdown-link">
     下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item>黄金糕</gj-dropdown-item>
-    <gj-dropdown-item>狮子头</gj-dropdown-item>
-    <gj-dropdown-item>螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item disabled>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item divided>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item>黄金糕</g-dropdown-item>
+    <g-dropdown-item>狮子头</g-dropdown-item>
+    <g-dropdown-item>螺蛳粉</g-dropdown-item>
+    <g-dropdown-item disabled>双皮奶</g-dropdown-item>
+    <g-dropdown-item divided>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 
 <style>
   .el-dropdown-link {
@@ -41,28 +41,28 @@
 :::demo 设置`split-button`属性来让触发下拉元素呈现为按钮组，左边是功能按钮，右边是触发下拉菜单的按钮，设置为`true`即可。
 
 ```html
-<gj-dropdown>
-  <gj-button type="primary">
+<g-dropdown>
+  <g-button type="primary">
     更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
-  </gj-button>
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item>黄金糕</gj-dropdown-item>
-    <gj-dropdown-item>狮子头</gj-dropdown-item>
-    <gj-dropdown-item>螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
-<gj-dropdown split-button type="primary" @click="handleClick">
+  </g-button>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item>黄金糕</g-dropdown-item>
+    <g-dropdown-item>狮子头</g-dropdown-item>
+    <g-dropdown-item>螺蛳粉</g-dropdown-item>
+    <g-dropdown-item>双皮奶</g-dropdown-item>
+    <g-dropdown-item>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
+<g-dropdown split-button type="primary" @click="handleClick">
   更多菜单
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item>黄金糕</gj-dropdown-item>
-    <gj-dropdown-item>狮子头</gj-dropdown-item>
-    <gj-dropdown-item>螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item>黄金糕</g-dropdown-item>
+    <g-dropdown-item>狮子头</g-dropdown-item>
+    <g-dropdown-item>螺蛳粉</g-dropdown-item>
+    <g-dropdown-item>双皮奶</g-dropdown-item>
+    <g-dropdown-item>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 
 <style>
   .el-dropdown {
@@ -95,38 +95,38 @@
 
 :::demo 在`trigger`属性设置为`click`即可。
 ```html
-<gj-row class="block-col-2">
-  <gj-col :span="12">
+<g-row class="block-col-2">
+  <g-col :span="12">
     <span class="demonstration">hover 激活</span>
-    <gj-dropdown>
+    <g-dropdown>
       <span class="el-dropdown-link">
         下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
-      <gj-dropdown-menu slot="dropdown">
-        <gj-dropdown-item icon="el-icon-plus">黄金糕</gj-dropdown-item>
-        <gj-dropdown-item icon="el-icon-circle-plus">狮子头</gj-dropdown-item>
-        <gj-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</gj-dropdown-item>
-        <gj-dropdown-item icon="el-icon-check">双皮奶</gj-dropdown-item>
-        <gj-dropdown-item icon="el-icon-circle-check">蚵仔煎</gj-dropdown-item>
-      </gj-dropdown-menu>
-    </gj-dropdown>
-  </gj-col>
-  <gj-col :span="12">
+      <g-dropdown-menu slot="dropdown">
+        <g-dropdown-item icon="el-icon-plus">黄金糕</g-dropdown-item>
+        <g-dropdown-item icon="el-icon-circle-plus">狮子头</g-dropdown-item>
+        <g-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</g-dropdown-item>
+        <g-dropdown-item icon="el-icon-check">双皮奶</g-dropdown-item>
+        <g-dropdown-item icon="el-icon-circle-check">蚵仔煎</g-dropdown-item>
+      </g-dropdown-menu>
+    </g-dropdown>
+  </g-col>
+  <g-col :span="12">
     <span class="demonstration">click 激活</span>
-    <gj-dropdown trigger="click">
+    <g-dropdown trigger="click">
       <span class="el-dropdown-link">
         下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
-      <gj-dropdown-menu slot="dropdown">
-        <gj-dropdown-item icon="el-icon-plus">黄金糕</gj-dropdown-item>
-        <gj-dropdown-item icon="el-icon-circle-plus">狮子头</gj-dropdown-item>
-        <gj-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</gj-dropdown-item>
-        <gj-dropdown-item icon="el-icon-check">双皮奶</gj-dropdown-item>
-        <gj-dropdown-item icon="el-icon-circle-check">蚵仔煎</gj-dropdown-item>
-      </gj-dropdown-menu>
-    </gj-dropdown>
-  </gj-col>
-</gj-row>
+      <g-dropdown-menu slot="dropdown">
+        <g-dropdown-item icon="el-icon-plus">黄金糕</g-dropdown-item>
+        <g-dropdown-item icon="el-icon-circle-plus">狮子头</g-dropdown-item>
+        <g-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</g-dropdown-item>
+        <g-dropdown-item icon="el-icon-check">双皮奶</g-dropdown-item>
+        <g-dropdown-item icon="el-icon-circle-check">蚵仔煎</g-dropdown-item>
+      </g-dropdown-menu>
+    </g-dropdown>
+  </g-col>
+</g-row>
 
 <style>
   .el-dropdown-link {
@@ -152,18 +152,18 @@
 
 :::demo 下拉菜单默认在点击菜单项后会被隐藏，将`hide-on-click`属性默认为`false`可以关闭此功能。
 ```html
-<gj-dropdown :hide-on-click="false">
+<g-dropdown :hide-on-click="false">
   <span class="el-dropdown-link">
     下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item>黄金糕</gj-dropdown-item>
-    <gj-dropdown-item>狮子头</gj-dropdown-item>
-    <gj-dropdown-item>螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item disabled>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item divided>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item>黄金糕</g-dropdown-item>
+    <g-dropdown-item>狮子头</g-dropdown-item>
+    <g-dropdown-item>螺蛳粉</g-dropdown-item>
+    <g-dropdown-item disabled>双皮奶</g-dropdown-item>
+    <g-dropdown-item divided>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 
 <style>
   .el-dropdown-link {
@@ -183,18 +183,18 @@
 
 :::demo
 ```html
-<gj-dropdown @command="handleCommand">
+<g-dropdown @command="handleCommand">
   <span class="el-dropdown-link">
     下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item command="a">黄金糕</gj-dropdown-item>
-    <gj-dropdown-item command="b">狮子头</gj-dropdown-item>
-    <gj-dropdown-item command="c">螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item command="d" disabled>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item command="e" divided>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item command="a">黄金糕</g-dropdown-item>
+    <g-dropdown-item command="b">狮子头</g-dropdown-item>
+    <g-dropdown-item command="c">螺蛳粉</g-dropdown-item>
+    <g-dropdown-item command="d" disabled>双皮奶</g-dropdown-item>
+    <g-dropdown-item command="e" divided>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 
 <style>
   .el-dropdown-link {
@@ -225,49 +225,49 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 :::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
-<gj-dropdown split-button type="primary">
+<g-dropdown split-button type="primary">
   默认尺寸
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item>黄金糕</gj-dropdown-item>
-    <gj-dropdown-item>狮子头</gj-dropdown-item>
-    <gj-dropdown-item>螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item>黄金糕</g-dropdown-item>
+    <g-dropdown-item>狮子头</g-dropdown-item>
+    <g-dropdown-item>螺蛳粉</g-dropdown-item>
+    <g-dropdown-item>双皮奶</g-dropdown-item>
+    <g-dropdown-item>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 
-<gj-dropdown size="medium" split-button type="primary">
+<g-dropdown size="medium" split-button type="primary">
   中等尺寸
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item>黄金糕</gj-dropdown-item>
-    <gj-dropdown-item>狮子头</gj-dropdown-item>
-    <gj-dropdown-item>螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item>黄金糕</g-dropdown-item>
+    <g-dropdown-item>狮子头</g-dropdown-item>
+    <g-dropdown-item>螺蛳粉</g-dropdown-item>
+    <g-dropdown-item>双皮奶</g-dropdown-item>
+    <g-dropdown-item>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 
-<gj-dropdown size="small" split-button type="primary">
+<g-dropdown size="small" split-button type="primary">
   小型尺寸
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item>黄金糕</gj-dropdown-item>
-    <gj-dropdown-item>狮子头</gj-dropdown-item>
-    <gj-dropdown-item>螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item>黄金糕</g-dropdown-item>
+    <g-dropdown-item>狮子头</g-dropdown-item>
+    <g-dropdown-item>螺蛳粉</g-dropdown-item>
+    <g-dropdown-item>双皮奶</g-dropdown-item>
+    <g-dropdown-item>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 
-<gj-dropdown size="mini" split-button type="primary">
+<g-dropdown size="mini" split-button type="primary">
   超小尺寸
-  <gj-dropdown-menu slot="dropdown">
-    <gj-dropdown-item>黄金糕</gj-dropdown-item>
-    <gj-dropdown-item>狮子头</gj-dropdown-item>
-    <gj-dropdown-item>螺蛳粉</gj-dropdown-item>
-    <gj-dropdown-item>双皮奶</gj-dropdown-item>
-    <gj-dropdown-item>蚵仔煎</gj-dropdown-item>
-  </gj-dropdown-menu>
-</gj-dropdown>
+  <g-dropdown-menu slot="dropdown">
+    <g-dropdown-item>黄金糕</g-dropdown-item>
+    <g-dropdown-item>狮子头</g-dropdown-item>
+    <g-dropdown-item>螺蛳粉</g-dropdown-item>
+    <g-dropdown-item>双皮奶</g-dropdown-item>
+    <g-dropdown-item>蚵仔煎</g-dropdown-item>
+  </g-dropdown-menu>
+</g-dropdown>
 ```
 :::
 
@@ -289,7 +289,7 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 | Name | 说明 |
 |------|--------|
 | — | 触发下拉列表显示的元素。 注意： 必须是一个元素或者或者组件  |
-| dropdown | 下拉列表，通常是 `<gj-dropdown-menu>` 组件     |
+| dropdown | 下拉列表，通常是 `<g-dropdown-menu>` 组件     |
 
 ### Dropdown Events
 | 事件名称      | 说明    | 回调参数      |
