@@ -37,7 +37,7 @@
 </p>
 
 <p align="center">
-  <b>Element-GJ，基于Element UI v2.13.2。</b>
+  <b>基于Element UI v2.13.2。</b>
 </p>
 
 > A Vue.js 2.0 UI Toolkit for Web.
